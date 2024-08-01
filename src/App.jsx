@@ -13,7 +13,9 @@ function App() {
                 <StarField />
                 <Jupiter />
                 <Earth />
-                <InfoBoard />
+                <InfoBoard position={[0, 5, 0]} content="Experience Info 1" />
+                <InfoBoard position={[40, 5, 0]} content="Experience Info 2" />
+                <InfoBoard position={[80, 5, 0]} content="Experience Info 3" />
                 <CameraController />
             </Canvas>
         </div>

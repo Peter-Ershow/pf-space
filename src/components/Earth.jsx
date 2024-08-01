@@ -8,7 +8,7 @@ const Earth = () => {
     const texture = useLoader(THREE.TextureLoader, earthTexture);
 
     return (
-        <mesh position={[60, 0, 0]}>
+        <mesh position={[30, 0, 0]}>
             <sphereGeometry args={[2, 32, 32]} />
             <meshStandardMaterial map={texture} />
         </mesh>

@@ -1,22 +1,31 @@
 // src/InfoBoard.js
-import React from 'react';
+import React, {useRef} from 'react';
 import { Text } from '@react-three/drei';
+import {useFrame} from "@react-three/fiber";
+import './ShiningTextMaterial';
 
-const InfoBoard = () => {
+const InfoBoard = ({ position, content }) => {
+    const materialRef = useRef();
+
+    /*
+    useFrame((state, delta) => {
+        if (materialRef.current) {
+            materialRef.current.time += delta;
+        }
+    });
+
+     */
+
     return (
-        <mesh position={[0, 5, 0]}>
-            <planeGeometry args={[5, 3]} />
-            <meshStandardMaterial color="white" />
-            <Text
-                position={[0, 0, 0.1]} // Slightly in front of the plane to prevent z-fighting
-                fontSize={0.5}
-                color="black"
-                anchorX="center"
-                anchorY="middle"
-            >
-                Experience Info
-            </Text>
-        </mesh>
+        <Text
+            position={position}
+            fontSize={0.5}
+            color="white"
+            anchorX="center"
+            anchorY="middle"
+        >
+            {content}
+        </Text>
     );
 };
 
