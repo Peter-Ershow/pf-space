@@ -11,6 +11,8 @@ const CameraController = () => {
     const [targetIndex, setTargetIndex] = useState(0);
     const [infoScrollPos, setInfoScrollPos] = useState({ 1: 0, 3: 0, 5: 0 });
     const maxInfoScroll = 100; // Maximum scroll value for the InfoBoard
+    const [isInterpolating, setIsInterpolating] = useState(true); // Track if the camera is interpolating
+
 
     //Debugging purposes
     camPositionSpan = document.querySelector("#position");
@@ -20,7 +22,7 @@ const CameraController = () => {
     const positions = [
         {
             position: new THREE.Vector3(0, 5, 5), // Header
-            lookAt: new THREE.Vector3(0, 5, 0)
+            lookAt: new THREE.Vector3(0, 5, -120)
         },
         {
             position: new THREE.Vector3(2.5, 0.5, 1.2),
@@ -43,7 +45,14 @@ const CameraController = () => {
     const infoBoardIndices = [1, 3, 5];
 
     const handleScroll = (event) => {
-        setTargetIndex(prev => (prev + (event.deltaY > 0 ? 1 : -1) + positions.length) % positions.length);
+        setTargetIndex(prev => {
+            const newIndex = prev + (event.deltaY > 0 ? 1 : -1);
+            if (newIndex < 0 || newIndex >= positions.length) {
+                return prev; // Do not update if out of bounds
+            }
+            setIsInterpolating(true); // Start interpolating to the new target position
+            return newIndex;
+        });
     };
 
     useEffect(() => {
@@ -52,20 +61,40 @@ const CameraController = () => {
     }, [infoScrollPos]);
 
     useFrame(() => {
-        const targetPos = positions[targetIndex];
-        camera.position.lerp(targetPos.position, 0.01);
-        camera.lookAt(targetPos.lookAt.x, targetPos.lookAt.y, targetPos.lookAt.z);
+        const target = positions[targetIndex];
+        const currentLookAt = new THREE.Vector3();
+        const targetLookAt = target.lookAt;
+        if (isInterpolating) {
+            // Interpolate camera position to the target
+            camera.position.lerp(target.position, 0.02);
 
-            camera.getWorldDirection(cameraDirection)
-        cameraDirection.set(cameraDirection.x * 100, cameraDirection.y * 100, cameraDirection.z * 100)
+            // Create a look vector and interpolate it
 
-            // update the onscreen spans with the camera's position and lookAt vectors
-        camPositionSpan.innerHTML = `Position: (${camera.position.x.toFixed(1)}, ${camera.position.y.toFixed(1)}, ${camera.position.z.toFixed(1)})`
-        camLookAtSpan.innerHTML = `LookAt: (${(camera.position.x + cameraDirection.x).toFixed(1)}, ${(camera.position.y + cameraDirection.y).toFixed(1)}, ${(camera.position.z + cameraDirection.z).toFixed(1)})`
+            currentLookAt.lerpVectors(camera.getWorldDirection(new THREE.Vector3()).add(camera.position), targetLookAt, 0.02);
+            camera.lookAt(currentLookAt);
 
+            // Check if the camera is close enough to the target position to stop interpolating
+            if (camera.position.distanceTo(target.position) < 0.1 && camera.getWorldDirection(new THREE.Vector3()).distanceTo(target.lookAt.clone().sub(camera.position).normalize()) < 0.1) {
+                camera.position.copy(target.position);
+                camera.lookAt(target.lookAt);
+                setIsInterpolating(false); // Stop interpolating
+            }
+        } else {
+            // Ensure the camera looks at the target when not interpolating
+            camera.lookAt(target.lookAt);
+        }
+
+        camera.getWorldDirection(cameraDirection);
+        cameraDirection.set(cameraDirection.x * 100, cameraDirection.y * 100, cameraDirection.z * 100);
+
+        // Update the onscreen spans with the camera's position and lookAt vectors
+        if (camPositionSpan) {
+            camPositionSpan.innerHTML = `Position: (${camera.position.x.toFixed(1)}, ${camera.position.y.toFixed(1)}, ${camera.position.z.toFixed(1)})`;
+        }
+        if (camLookAtSpan) {
+            camLookAtSpan.innerHTML = `LookAt: (${currentLookAt.x.toFixed(1)}, ${currentLookAt.y.toFixed(1)}, ${currentLookAt.z.toFixed(1)})`;
+        }
     });
-
-
 
     return null;
 };

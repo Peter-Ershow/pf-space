@@ -7,8 +7,9 @@ Source: https://sketchfab.com/3d-models/blackhole-74cbeaeae2174a218fe9455d77902b
 Title: Blackhole
 */
 
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+import * as THREE from "three";
 
 export function Blackhole(props) {
   const group = React.useRef()
@@ -16,30 +17,13 @@ export function Blackhole(props) {
   const { actions } = useAnimations(animations, group)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  useEffect(() => {
+    const action = actions['Take 001']; // Replace 'ActionName' with the name of your animation action
+    if (action) {
+      action.play().setLoop(THREE.LoopRepeat);
+      action.timeScale = 0.2; // Slow down the animation to half speed
+    }
+  }, [actions]);
 
 
   return (
