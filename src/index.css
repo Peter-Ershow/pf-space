@@ -1,0 +1,17 @@
+/* Ensure the root element, body, and html occupy full viewport */
+html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure the canvas container also occupies the full viewport */
+#canvas-container {
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    display: block; /* Remove default inline-block margin */
+}
