@@ -2,38 +2,48 @@ import React, { useEffect, useState } from 'react';
 import { useThree, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
+// 3. define cameraDirection and span variables
+let cameraDirection = new THREE.Vector3()
+let camPositionSpan, camLookAtSpan
+
 const CameraController = () => {
     const { camera } = useThree();
     const [targetIndex, setTargetIndex] = useState(0);
     const [infoScrollPos, setInfoScrollPos] = useState({ 1: 0, 3: 0, 5: 0 });
     const maxInfoScroll = 100; // Maximum scroll value for the InfoBoard
 
+    //Debugging purposes
+    camPositionSpan = document.querySelector("#position");
+    camLookAtSpan = document.querySelector("#lookingAt");
+
+
     const positions = [
-        new THREE.Vector3(-60, 0, 5),
-        new THREE.Vector3(0, 5, 5), // Position of InfoBoard 1
-        new THREE.Vector3(30, 0, 5),
-        new THREE.Vector3(40, 5, 5), // Position of InfoBoard 2
-        new THREE.Vector3(60, 5, 5),
-        new THREE.Vector3(80, 5, 5), // Position of InfoBoard 3
+        {
+            position: new THREE.Vector3(0, 5, 5), // Header
+            lookAt: new THREE.Vector3(0, 5, 0)
+        },
+        {
+            position: new THREE.Vector3(2.5, 0.5, 1.2),
+            lookAt: new THREE.Vector3(2.3, 0.7, 0.2),
+        },
+        {
+            position: new THREE.Vector3(-0.5, 0.4, 3.2), // Position of InfoBoard 2 Beauty
+            lookAt: new THREE.Vector3(-0.5, 0.4, 0)
+        },
+        {
+            position: new THREE.Vector3(-2.5, 0.3, -1.0),
+            lookAt: new THREE.Vector3(-2.5, 0.3, 0)
+        },
+        {
+            position: new THREE.Vector3(-4.1, 3, -2.9), // Position of InfoBoard 3
+            lookAt: new THREE.Vector3(-4.1, 3, 0)
+        }
     ];
 
     const infoBoardIndices = [1, 3, 5];
 
     const handleScroll = (event) => {
-        if (infoBoardIndices.includes(targetIndex)) { // Check if camera is at any InfoBoard position
-            if (event.deltaY > 0 && infoScrollPos[targetIndex] < maxInfoScroll) {
-                setInfoScrollPos(prev => ({ ...prev, [targetIndex]: Math.min(prev[targetIndex] + 10, maxInfoScroll) }));
-            } else if (event.deltaY < 0 && infoScrollPos[targetIndex] > 0) {
-                setInfoScrollPos(prev => ({ ...prev, [targetIndex]: Math.max(prev[targetIndex] - 10, 0) }));
-            } else if (infoScrollPos[targetIndex] === maxInfoScroll) {
-                setTargetIndex(prev => (prev + 1) % positions.length);
-                setInfoScrollPos(prev => ({ ...prev, [targetIndex]: 0 })); // Reset scroll position for current InfoBoard
-            } else if (infoScrollPos[targetIndex] === 0 && event.deltaY < 0) {
-                setTargetIndex(prev => (prev - 1 + positions.length) % positions.length);
-            }
-        } else {
-            setTargetIndex(prev => (prev + (event.deltaY > 0 ? 1 : -1) + positions.length) % positions.length);
-        }
+        setTargetIndex(prev => (prev + (event.deltaY > 0 ? 1 : -1) + positions.length) % positions.length);
     };
 
     useEffect(() => {
@@ -43,9 +53,19 @@ const CameraController = () => {
 
     useFrame(() => {
         const targetPos = positions[targetIndex];
-        camera.position.lerp(targetPos, 0.05);
-        camera.lookAt(targetPos.x, targetPos.y, 0);
+        camera.position.lerp(targetPos.position, 0.01);
+        camera.lookAt(targetPos.lookAt.x, targetPos.lookAt.y, targetPos.lookAt.z);
+
+            camera.getWorldDirection(cameraDirection)
+        cameraDirection.set(cameraDirection.x * 100, cameraDirection.y * 100, cameraDirection.z * 100)
+
+            // update the onscreen spans with the camera's position and lookAt vectors
+        camPositionSpan.innerHTML = `Position: (${camera.position.x.toFixed(1)}, ${camera.position.y.toFixed(1)}, ${camera.position.z.toFixed(1)})`
+        camLookAtSpan.innerHTML = `LookAt: (${(camera.position.x + cameraDirection.x).toFixed(1)}, ${(camera.position.y + cameraDirection.y).toFixed(1)}, ${(camera.position.z + cameraDirection.z).toFixed(1)})`
+
     });
+
+
 
     return null;
 };

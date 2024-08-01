@@ -6,16 +6,6 @@ import './ShiningTextMaterial';
 
 const InfoBoard = ({ position, content }) => {
     const materialRef = useRef();
-
-    /*
-    useFrame((state, delta) => {
-        if (materialRef.current) {
-            materialRef.current.time += delta;
-        }
-    });
-
-     */
-
     return (
         <Text
             position={position}
