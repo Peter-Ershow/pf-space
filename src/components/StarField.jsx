@@ -8,7 +8,7 @@ const StarField = () => {
 
     return (
         <mesh>
-            <sphereGeometry args={[500, 60, 40]} />
+            <sphereGeometry args={[100, 12, 8]} />
             <meshBasicMaterial
                 map={texture}
                 side={THREE.BackSide} // Render texture on the inside of the sphere
