@@ -91,7 +91,7 @@ export default function InfoBoard () {
                       <li>📦 Studienkolleg bei den Universitäten des Freistaates Bayern in München</li>
                   </ul>
               </Section>
-              <Spacer height="740vh" /> {/* Add a spacer of 50vh */}
+              <Spacer height="735vh" /> {/* Add a spacer of 50vh */}
               <Section>
                   <h1>Contact me at: ershoepeter@gmail.com
                   <a href="https://www.linkedin.com/in/ershpeter" target="_blank" rel="noopener noreferrer">
@@ -101,6 +101,24 @@ export default function InfoBoard () {
                           <FaInstagram size={30} color="black" />
                       </a>
                   </h1>
+                  <p className="text-full-opacity" style={{ fontSize: '2em', color: 'black' }}>Credits:</p>
+                  <ul className="text-full-opacity" style={{ fontSize: '1em', color: 'black' }}>
+                      <li> https://www.solarsystemscope.com/ for Fabulous stars textures</li>
+                      <li>
+                          This work is based on{' '}
+                          <a href="https://sketchfab.com/3d-models/blackhole-74cbeaeae2174a218fe9455d77902b5c" target="_blank" rel="noopener noreferrer">
+                              "Blackhole"
+                          </a>{' '}
+                          by{' '}
+                          <a href="https://sketchfab.com/rubykamen" target="_blank" rel="noopener noreferrer">
+                              rubykamen
+                          </a>{' '}
+                          licensed under{'  '}
+                          <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">
+                              CC-BY-4.0
+                          </a>.
+                      </li>
+                  </ul>
               </Section>
           </div>
       </Scroll>
