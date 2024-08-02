@@ -1,8 +1,6 @@
-# React + Vite
+# Portfolio Space
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Credits:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://www.solarsystemscope.com/ for Fabulous stars textures
+The Blackhole model is based on "Blackhole" (https://sketchfab.com/3d-models/blackhole-74cbeaeae2174a218fe9455d77902b5c) by rubykamen (https://sketchfab.com/rubykamen) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
