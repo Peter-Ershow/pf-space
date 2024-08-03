@@ -11,9 +11,10 @@ import {
 import {Blackhole} from "./components/Blackhole.jsx";
 import {useEffect} from "react";
 import InfoBoard from "./components/InfoBoard.jsx";
+import flyThroughState from "./Fltheatre-project-state.json"
 
 export default function App() {
-    const sheet = getProject("Fly Through").sheet("Scene");
+    const sheet = getProject("Fly Through", {state: flyThroughState}).sheet("Scene");
 
     return (
         <Canvas gl={{ preserveDrawingBuffer: true }}>
