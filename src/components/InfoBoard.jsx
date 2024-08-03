@@ -3,8 +3,6 @@ import { Scroll, useScroll } from "@react-three/drei";
 import React, { useState } from "react";
 import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 
-
-
 const Section = (props) => {
     return (
         <section
