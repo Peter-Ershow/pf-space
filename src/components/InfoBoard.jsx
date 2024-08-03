@@ -1,6 +1,6 @@
 // Text1.jsx
-import { Scroll, useScroll } from "@react-three/drei";
-import React, { useState } from "react";
+import { Scroll} from "@react-three/drei";
+import React from "react";
 import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Section = (props) => {
@@ -35,63 +35,86 @@ const SectionCenter = (props) => {
     );
 };
 
-const SectionContacts = (props) => {
-    return (
-        <section
-            className={`h-screen flex flex-auto justify-center items-center`}
-            style={{
-                opacity: 1,
-            }}
-        >
-            {props.children}
-        </section>
-    );
-};
-
-
 export default function InfoBoard () {
-    const scroll = useScroll();
-    const [opacityFirstSection, setOpacityFirstSection] = useState(1);
-    const [opacitySecondSection, setOpacitySecondSection] = useState(1);
-    const [opacityThirdSection, setOpacityThirdSection] = useState(1);
-
-    /*
-    useFrame(() => {
-        setOpacityFirstSection((1 - scroll.range(0, 2 / 6)) * 0.8);
-        setOpacitySecondSection(scroll.curve(2 / 6, 2 / 6) * 0.8);
-        setOpacityThirdSection(scroll.range(4 / 6, 2 / 6) * 0.8);
-    });
-
-     */
-
     return (
       <Scroll html>
           <div>
-              <SectionCenter opacity={opacityFirstSection}>
-                <h1 style={{fontSize: '4em', color: 'white' }}>
-                     Hello, I am Peter
+              <SectionCenter>
+                <h1 style={{fontSize: '3em', color: 'white' }}>
+                     Hi, I am Peter
                 </h1>
               </SectionCenter>
               <SectionCenter>
-                  <h1 className="text-full-opacity" style={{ fontSize: '4em', color: 'white' }}>Welcome to the Stars </h1>
-              </SectionCenter>
-              <Section>
-                  <h1 className="text-full-opacity" style={{fontSize: '3em', color: 'black' }}>
-                      I am passionate Software Engineer
+                  <h1 className="text-full-opacity" style={{fontSize: '2em', color: 'white' }}>
+                      Software Engineer
                       and Gameplay Developer
                   </h1>
-              </Section>
+              </SectionCenter>
+              <SectionCenter>
+                  <h1 className="text-full-opacity" style={{ fontSize: '3em', color: 'white' }}>
+                      Welcome to the Stars
+                  </h1>
+              </SectionCenter>
+
               <Section>
-                  <h1 className="text-full-opacity" style={{ fontSize: '4em', color: 'black' }}>Welcome to the Stars </h1>
-                  <p className="text-full-opacity" style={{ fontSize: '2em', color: 'black' }}>Education:</p>
-                  <ul className="text-full-opacity" style={{ fontSize: '2em', color: 'black' }}>
-                      <li>🧑‍💻 Technical University of Munich, Bachelor's Degree in Information Systems, Thesis: Using Virtual Reality in Serious Gaming</li>
-                      <li>📦 Studienkolleg bei den Universitäten des Freistaates Bayern in München</li>
+                  <h1 className="text-full-opacity" style={{ fontSize: '3em', color: 'black' }}>Which are also my portfolio </h1>
+                  <p className="text-full-opacity" style={{ fontSize: '1em', color: 'black' }}>As always, starting with scientific degree:</p>
+                  <ul className="text-full-opacity" style={{ fontSize: '1em', color: 'black' }}>
+                      <li>I studied Information Systems BSc at the Technical University of Munich in the years of 2020 to 2024, </li>
+                      My thesis and project work were based on the immersive VR studies. During those days, I developed a solar system explorer, called Project Water, where
+                      player can travel between Mars, Venus and Mercury, explore it's surface and get insights to discoveries of humanity on those planets. I will tell about the project later on the page.
                   </ul>
               </Section>
-              <Spacer height="735vh" /> {/* Add a spacer of 50vh */}
               <Section>
-                  <h1>Contact me at: ershoepeter@gmail.com
+                  <p className="text-full-opacity" style={{ fontSize: '2em', color: 'black' }}>Experience</p>
+                  <ul className="text-full-opacity" style={{ fontSize: '1em', color: 'black' }}>
+                      <li>Since April 2022 working as a Java/Kotlin/React Software Engineer at Scalable Capital</li>
+                  </ul>
+              </Section>
+              <Section>
+                  <ul className="text-full-opacity" style={{ fontSize: '1.5em', color: 'black' }}>
+                      <li>But this place here is my dedication to the art of game design, scripting and engineering
+                      of immersive experiences for someone who is playing my games.
+                      </li>
+                  </ul>
+              </Section>
+              <Section>
+                  <h3 className="text-full-opacity" style={{ fontSize: '2em', color: 'black' }}>Why are we here?</h3>
+                  <ul className="text-full-opacity" style={{ fontSize: '1.2em', color: 'black' }}>
+                      <li>Since age of 16 my hobby was to create levels of all kinds in Unreal Engine and Unity, show them to relatives and friends, I completed a bunch of
+                          courses in C++ and Blueprints Unreal engine mainly focused on level scripting, animations and sound engineering. All those projects can be found on my GitHub page.
+                          Since 2022 I am developing my own levels, which are often based on the Dungeons and Dragons campaign I run, which currently has taken 30 sessions.
+                      </li>
+                  </ul>
+              </Section>
+              <Section>
+                  <h3 className="text-full-opacity" style={{ fontSize: '2em', color: 'black' }}>Why are we here?</h3>
+                  <ul className="text-full-opacity" style={{ fontSize: '1.2em', color: 'black' }}>
+                      <li>Since age of 16 my hobby was to create levels of all kinds in Unreal Engine and Unity, show them to relatives and friends, I completed a bunch of
+                          courses in C++ and Blueprints Unreal engine mainly focused on level scripting, animations and sound engineering. All those projects can be found on my GitHub page.
+                          Since 2022 I am developing my own levels, which are often based on the Dungeons and Dragons campaign I run, which currently has taken 30 sessions.
+                          On this page I want to showcase two of my main projects
+                      </li>
+                  </ul>
+              </Section>
+              <Section>
+                  <h3 className="text-full-opacity" style={{ fontSize: '2em', color: 'black' }}>Project Water(Working title)</h3>
+                  <ul className="text-full-opacity" style={{ fontSize: '1.2em', color: 'black' }}>
+                      <li>Demo of this project can be found here: {' '}
+                          <a href="" target="_blank" rel="noopener noreferrer" style={{color: 'blue'}}>
+                              "Project Water"
+                          </a>{' '}
+                          I developed the whole interaction system, including sound components, fading, level starters, gravity physics, UI Interaction,
+                          grabbing logic and game subsystem. Those were implemented with help of C++ and Blueprint languages in Unreal Engine 5. The spaceship level is also designed by me with help of Cargo assets.
+                          You can view the project documentation here: {' '}
+                          <a href="/pf-space/IEEE_Conference_Template.pdf" target="_blank" rel="noopener noreferrer" style={{color: 'blue'}}>
+                              Project Documentation (PDF)
+                          </a>{' '}
+                      </li>
+                  </ul>
+              </Section>
+              <Section>
+                  <h1>Contact me at: ershowpeter@gmail.com
                   <a href="https://www.linkedin.com/in/ershpeter" target="_blank" rel="noopener noreferrer">
                      <FaLinkedin size={30} color="black" />
                   </a>
@@ -117,6 +140,7 @@ export default function InfoBoard () {
                           </a>.
                       </li>
                   </ul>
+                  <p className="text-full-opacity" style={{ fontSize: '1em', color: 'black' }}>All projects listed on the page are used purely for educational purposes and were never used for commercial use</p>
               </Section>
           </div>
       </Scroll>

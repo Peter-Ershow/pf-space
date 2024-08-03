@@ -2,28 +2,33 @@ import {Canvas, useFrame, useThree} from '@react-three/fiber'
 import StarField from "./components/StarField.jsx";
 import './index.css';
 import { ScrollControls, useScroll } from "@react-three/drei";
-import { getProject, val } from "@theatre/core";
+import {getProject, types, val} from "@theatre/core";
 import {
     SheetProvider,
     PerspectiveCamera,
-    useCurrentSheet,
+    useCurrentSheet, editable,
 } from "@theatre/r3f";
 import {Blackhole} from "./components/Blackhole.jsx";
 import {useEffect} from "react";
 import InfoBoard from "./components/InfoBoard.jsx";
 import flyThroughState from "./Fltheatre-project-state.json"
+import {Bloom, EffectComposer, Noise, Vignette} from "@react-three/postprocessing";
 
 export default function App() {
     const sheet = getProject("Fly Through", {state: flyThroughState}).sheet("Scene");
-
     return (
         <Canvas gl={{ preserveDrawingBuffer: true }}>
-            <ScrollControls pages={12}>
+            <ScrollControls pages={16}>
                 <SheetProvider sheet={sheet}>
                     <Scene />
                 </SheetProvider>
                 <InfoBoard />
             </ScrollControls>
+            <EffectComposer>
+                <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
+                <Noise opacity={0.02} />
+                <Vignette eskil={false} offset={0.1} darkness={1.1} />
+            </EffectComposer>
         </Canvas>
     );
 }
@@ -57,15 +62,19 @@ function Scene() {
         sheet.sequence.position = (scroll.offset * sequenceLength) ;
     });
 
-    const bgColor = "#84a4f4";
-
     return (
         <>
-            <color attach="background" args={[bgColor]} />
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[-5, 5, -5]} intensity={1.5} />
             <StarField />
-            <Blackhole />
+            <editable.group
+                theatreKey="Black Hole"
+                additionalProps={{
+                    timeScale: types.number(0.5, {
+                        nudgeMultiplier: 0.1,
+                    }),
+                }}
+            >
+                <Blackhole/>
+            </editable.group>
             <PerspectiveCamera
                 theatreKey="Camera"
                 makeDefault

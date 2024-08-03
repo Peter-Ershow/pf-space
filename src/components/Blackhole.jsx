@@ -15,13 +15,11 @@ export function Blackhole(props) {
   const group = React.useRef()
   const { nodes, materials, animations } = useGLTF('./blackhole.glb')
   const { actions } = useAnimations(animations, group)
-
-
   useEffect(() => {
     const action = actions['Take 001']; // Replace 'ActionName' with the name of your animation action
     if (action) {
       action.play().setLoop(THREE.LoopRepeat);
-      action.timeScale = 0.2; // Slow down the animation to half speed
+      action.timeScale = 0.8; // Slow down the animation to half speed
     }
   }, [actions]);
 
@@ -81,7 +79,7 @@ export function Blackhole(props) {
                 <group name="Blackhole_core002" rotation={[-Math.PI / 2, 0, 0]} scale={0.928}>
                   <mesh name="Blackhole_core002_Blackhole_ring2_0" geometry={nodes.Blackhole_core002_Blackhole_ring2_0.geometry} material={materials.Blackhole_ring2} />
                 </group>
-                <group name="Blackhole_core" rotation={[-Math.PI / 2, 0, 0]} scale={0.968}>
+                <group name="Blackhole_core" rotation={[-Math.PI / 1, 0, 0]} scale={0.968}>
                   <mesh name="Blackhole_core_Blackhole_core_0" geometry={nodes.Blackhole_core_Blackhole_core_0.geometry} material={materials.Blackhole_core} />
                 </group>
               </group>
