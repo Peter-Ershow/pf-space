@@ -103,7 +103,7 @@ export default function InfoBoard () {
                   </h1>
                   <p className="text-full-opacity" style={{ fontSize: '2em', color: 'black' }}>Credits:</p>
                   <ul className="text-full-opacity" style={{ fontSize: '1em', color: 'black' }}>
-                      <li> https://www.solarsystemscope.com/ for Fabulous stars textures</li>
+                      <li> Thanks https://www.solarsystemscope.com/ for Fabulous stars textures</li>
                       <li>
                           This work is based on{' '}
                           <a href="https://sketchfab.com/3d-models/blackhole-74cbeaeae2174a218fe9455d77902b5c" target="_blank" rel="noopener noreferrer">
