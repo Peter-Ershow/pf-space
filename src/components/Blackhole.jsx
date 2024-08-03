@@ -13,7 +13,7 @@ import * as THREE from "three";
 
 export function Blackhole(props) {
   const group = React.useRef()
-  const { nodes, materials, animations } = useGLTF('./models/blackhole.glb')
+  const { nodes, materials, animations } = useGLTF('./blackhole.glb')
   const { actions } = useAnimations(animations, group)
 
 
@@ -93,4 +93,4 @@ export function Blackhole(props) {
   )
 }
 
-useGLTF.preload('./models/blackhole.glb')
+useGLTF.preload('./blackhole.glb')
