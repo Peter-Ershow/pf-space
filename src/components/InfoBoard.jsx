@@ -67,7 +67,7 @@ export default function InfoBoard () {
                 </SectionCenter>
 
                 <Section>
-                    <h1 className="text-6xl sm:text-4xl  text-black">
+                    <h1 className="text-6xl sm:text-4xl text-black">
                         Which are also my portfolio
                     </h1>
                     <p className="text-3xl sm:text-2xl text-black">

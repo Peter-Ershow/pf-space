@@ -19,7 +19,7 @@ export function Blackhole(props) {
     const action = actions['Take 001']; // Replace 'ActionName' with the name of your animation action
     if (action) {
       action.play().setLoop(THREE.LoopRepeat);
-      action.timeScale = 0.5; // Slow down the animation to half speed
+      action.timeScale = -0.5; // Slow down the animation to half speed
     }
   }, [actions]);
 
