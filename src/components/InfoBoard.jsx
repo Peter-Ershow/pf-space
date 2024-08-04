@@ -6,14 +6,14 @@ import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 const Section = (props) => {
     return (
         <section
-            className={`h-screen flex flex-col justify-center p-10 `}
+            className={`h-screen flex flex-col justify-center`}
             style={{
                 opacity: 0.7,
             }}
         >
             <div className="w-2x1 flex items-center justify-center">
                 <div className="max-w-m w-full">
-                    <div className="bg-white rounded-lg px-8 py-12">
+                    <div className="bg-white rounded-r-lg px-8 py-12">
                         {props.children}
                     </div>
                 </div>
@@ -25,7 +25,7 @@ const Section = (props) => {
 const SectionCenter = (props) => {
     return (
         <section
-            className={`h-screen flex flex-col justify-center`}
+            className={`w-full h-screen flex flex-col justify-center items-center`}
         >
             {props.children}
         </section>
@@ -43,7 +43,7 @@ export default function InfoBoard () {
                     </h1>
                 </SectionCenter>
                 <SectionCenter>
-                    <h1 className="text-full-opacity" style={{fontSize: '2em', color: 'white' }}>
+                    <h1 className="text-full-opacity " style={{fontSize: '2em', color: 'white' }}>
                         Software Engineer
                         and Gameplay Developer
                     </h1>
@@ -87,7 +87,7 @@ export default function InfoBoard () {
                     </ul>
                 </Section>
                 <Section>
-                    <ul className="text-4xl sm:text-3xl text-black">
+                    <ul className="text-4xl sm:text-4xl text-black">
                         <li>This place is dedicated to the art of game design, scripting, and engineering of immersive experiences for players.</li>
                     </ul>
                 </Section>

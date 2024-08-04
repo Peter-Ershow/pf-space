@@ -598,3 +598,8 @@ body,
   align-content: center;
   font-family: 'Bodoni Moda SC', serif;
 }
+
+.rounded-r-lg{
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+}
