@@ -3,13 +3,3 @@
 body {
     font-family: 'Bodoni Moda SC', serif;
 }
-
-.container {
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px; /* Adjust padding as needed */
-    box-sizing: border-box;
-}

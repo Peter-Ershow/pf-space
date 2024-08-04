@@ -21,7 +21,6 @@ export default function App() {
                 <SheetProvider sheet={sheet}>
                     <Scene />
                 </SheetProvider>
-                <InfoBoard />
             </ScrollControls>
             <EffectComposer>
                 <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
@@ -81,6 +80,7 @@ function Scene() {
                 near={0.1}
                 far={70}
             />
+            <InfoBoard />
         </>
     );
 }
