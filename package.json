@@ -2,7 +2,7 @@
   "name": "pf-space",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://peter-ershow.github.io/pf-space/",
+  "homepage": "https://www.peter-ershow.com/",
   "type": "module",
   "scripts": {
     "dev": "vite",
