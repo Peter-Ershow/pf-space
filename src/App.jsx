@@ -1,6 +1,5 @@
 import {Canvas, useFrame, useThree} from '@react-three/fiber'
 import StarField from "./components/StarField.jsx";
-import './index.css';
 import { ScrollControls, useScroll } from "@react-three/drei";
 import {getProject, types, val} from "@theatre/core";
 import {
@@ -11,14 +10,14 @@ import {
 import {Blackhole} from "./components/Blackhole.jsx";
 import {useEffect} from "react";
 import InfoBoard from "./components/InfoBoard.jsx";
-import flyThroughState from "./Fltheatre-project-state.json"
+import flyThroughState from "./stateStaticFly.json"
 import {Bloom, EffectComposer, Noise, Vignette} from "@react-three/postprocessing";
 
 export default function App() {
     const sheet = getProject("Fly Through", {state: flyThroughState}).sheet("Scene");
     return (
         <Canvas gl={{ preserveDrawingBuffer: true }}>
-            <ScrollControls pages={16}>
+            <ScrollControls pages={24}>
                 <SheetProvider sheet={sheet}>
                     <Scene />
                 </SheetProvider>
@@ -64,14 +63,13 @@ function Scene() {
 
     return (
         <>
-            <StarField />
+            <editable.group
+                theatreKey="Stars"
+            >
+                <StarField />
+            </editable.group>
             <editable.group
                 theatreKey="Black Hole"
-                additionalProps={{
-                    timeScale: types.number(0.5, {
-                        nudgeMultiplier: 0.1,
-                    }),
-                }}
             >
                 <Blackhole/>
             </editable.group>
