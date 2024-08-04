@@ -35,7 +35,7 @@ export default function InfoBoard () {
             <div>
                 <SectionCenter>
                     <h1 style={{fontSize: '3em', color: 'white' }}>
-                        Hi, I am Peter
+                        Hello, I am Peter
                     </h1>
                 </SectionCenter>
                 <SectionCenter>
@@ -100,7 +100,7 @@ export default function InfoBoard () {
                     <ul className="text-3xl sm:text-3xl text-black">
                         <li>Demo of this project can be found <a href="" target="_blank" rel="noopener noreferrer" className="text-blue-500">here</a>.</li>
                         <li>Developed the interaction system, including sound components, fading, level starters, gravity physics, UI Interaction, grabbing logic, and game subsystem using C++ and Blueprint languages in Unreal Engine 5.</li>
-                        <li>Spaceship level designed by me with Cargo assets. View project documentation <a href="/pf-space/IEEE_Conference_Template.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500">here</a>.</li>
+                        <li>Spaceship level designed by me with Cargo assets. View project documentation <a href="./IEEE_Conference_Template.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500">here</a>.</li>
                     </ul>
                 </Section>
                 <Section>
