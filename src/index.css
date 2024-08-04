@@ -569,6 +569,7 @@ video {
 .bg-white {
   --tw-bg-opacity: 0.7;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  margin-right: 15px;
 }
 
 .p-10 {
