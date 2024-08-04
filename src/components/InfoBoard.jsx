@@ -6,11 +6,7 @@ import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 const Section = (props) => {
     return (
         <section
-            className={`h-screen flex flex-col justify-center`}
-            style={{
-                opacity: 0.7,
-            }}
-        >
+            className={`h-screen flex flex-col justify-center`}>
             <div className="w-2x1 flex items-center justify-center">
                 <div className="max-w-m w-full">
                     <div className="bg-white rounded-r-lg px-8 py-12">
@@ -67,13 +63,13 @@ export default function InfoBoard () {
                 </SectionCenter>
 
                 <Section>
-                    <h1 className="text-6xl sm:text-4xl text-black">
+                    <h1 className="text-6xl sm:text-4xl text-black" style={{ opacity: 1 }}>
                         Which are also my portfolio
                     </h1>
-                    <p className="text-3xl sm:text-2xl text-black">
+                    <p className="text-3xl sm:text-2xl text-black" style={{ opacity: 1 }}>
                         As always, starting with scientific degree:
                     </p>
-                    <ul className="text-3xl sm:text-2xl text-black">
+                    <ul className="text-3xl sm:text-2xl text-black" style={{ opacity: 1 }}>
                         <li>I studied Information Systems BSc at the Technical University of Munich from 2020 to 2024.</li>
                         <li>My thesis and project work were based on immersive VR studies, developing a solar system explorer called Project Water.</li>
                         <li>Players can travel between Mars, Venus, and Mercury, explore their surfaces, and learn about humanity's discoveries on those planets.</li>
@@ -111,10 +107,10 @@ export default function InfoBoard () {
                     <h1 className="text-5xl sm:text-4xl text-black">Contact me at: ershowpeter@gmail.com</h1>
                     <div className="flex space-x-4 mt-2">
                         <a href="https://www.linkedin.com/in/ershpeter" target="_blank" rel="noopener noreferrer">
-                            <FaLinkedin size={30} color="black" />
+                            <FaLinkedin size={30} color="white" />
                         </a>
                         <a href="https://www.instagram.com/ershpeter" target="_blank" rel="noopener noreferrer">
-                            <FaInstagram size={30} color="black" />
+                            <FaInstagram size={30} color="white" />
                         </a>
                     </div>
                     <p className="text-5xl sm:text-4xl text-black mt-4">Credits:</p>
