@@ -543,10 +543,6 @@ video {
     width: 50%;
 }
 
-.w-full {
-    width: 100%;
-}
-
 .max-w-sm {
     max-width: 24rem;
 }

@@ -2,12 +2,13 @@
 import { Scroll} from "@react-three/drei";
 import React from "react";
 import {FaLinkedin, FaInstagram, FaGithub} from 'react-icons/fa';
+import RepositoryViewer from "./RepositoryViewer.jsx";
 
 const Section = (props) => {
     return (
         <section
-            className={`h-screen flex flex-col justify-center`}>
-            <div className="w-2x1 flex items-center justify-center">
+            className={`h-screen flex flex-col justify-center w-half`}>
+            <div className="items-center justify-center">
                 <div className="max-w-m w-full">
                     <div className="bg-white rounded-r-lg px-8 py-12">
                         {props.children}
@@ -103,6 +104,116 @@ export default function InfoBoard () {
                     <a href="/img_2.png" target="_blank" rel="noopener noreferrer">
                         <img src="/img_2.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '20%', marginTop: '20px' }} />
                     </a>
+                </Section>
+                <Section>
+                    <h3 className="text-6xl sm:text-4xl text-black">Project Water (Working title)</h3>
+                    <ul className="text-3xl sm:text-3xl text-black">
+                        <li>Developed the interaction system, including sound components...</li>
+                    </ul>
+                    <RepositoryViewer username="Peter-Ershow" repoName="ProjectWater" />
+                </Section>
+                <Section>
+                    <h2 className="text-6xl sm:text-4xl text-black" >Game Puzzle Systems</h2>
+
+                    <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                        <li>
+                            <strong>Research Focus:</strong><br />
+                            Creating my own puzzle systems using Dungeons & Dragons (DND) books and Unreal Engine (UE) with C++. My main portfolio achievement for this topic is a Mars puzzle.
+                        </li>
+
+                        <li>
+                            <strong>Generic Puzzle Subsystem:</strong><br />
+                            Developed a generic puzzle subsystem with multiple parameters, aimed at creating a logical path between steps in the puzzle.
+                        </li>
+                    </ul>
+
+                    <h2 className="text-6xl sm:text-4xl text-black">Puzzle Workflow Example</h2>
+
+                    <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                        <li>
+                            <strong>Puzzle Interaction Flow:</strong>
+
+                            <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                                <li>
+                                    <strong>Object Interaction:</strong><br />
+                                    The player picks up an object and places it in the correct bucket.
+                                </li>
+
+                                <li>
+                                    <strong>Triggering the Puzzle Manager:</strong><br />
+                                    This action triggers the puzzle manager with multiple parameters, such as:
+                                    <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                                        <li>Tags of the object</li>
+                                        <li>Index in the puzzle</li>
+                                        <li>Other tags (e.g., Niagara index, and others)</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <strong>Puzzle Manager Responsibilities:</strong><br />
+                                    The puzzle manager is responsible for:
+                                    <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                                        <li>Assembling the solution component</li>
+                                        <li>Triggering success/failure events</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Multiple Puzzle Managers:</strong><br />
+
+                            <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                                <li><strong>Modular Puzzle Managers:</strong><br />
+                                    There can be different puzzle managers responsible for different types of puzzles, such as:</li>
+                                <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                                    <li>Assemble puzzles</li>
+                                    <li>Logical sequence puzzles</li>
+                                    <li>And others</li>
+                                </ul>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h2 className="text-6xl sm:text-4xl text-black">Example: Mars Puzzle</h2>
+
+                    <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                        <li>
+                            <strong>Puzzle Scenario:</strong><br />
+                            In my example, I implemented an assemble puzzle focused on building an arm with a turret for a rover on Mars.
+                        </li>
+
+                        <li>
+                            <strong>Guidance Approaches:</strong><br />
+                            There are three different approaches to guiding the player:
+                            <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                                <li><strong>Visual:</strong> Text-based guidance.</li>
+                                <li><strong>Auditory:</strong> Narrator explanations in the background.</li>
+                                <li><strong>Haptic:</strong> Stronger haptics on wrong choices.</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Dynamic Delegates for Interaction:</strong>
+
+                            <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                                <li>
+                                    <strong>Overlap Event Handling:</strong><br />
+                                    Whenever a puzzle component overlaps with an actor, it adds a dynamic delegate to the release event on the held component. If the overlap stops, the delegate is removed (see the attached screenshot).
+                                </li>
+
+                                <li>
+                                    <strong>Tag Passing and Verification:</strong><br />
+                                    The component passes its tag to the puzzle manager, which verifies if such a tag exists in the solution component.
+                                </li>
+
+                                <li>
+                                    <strong>Puzzle Completion Verification:</strong><br />
+                                    The puzzle manager verifies the completed puzzle and can trigger further events based on the completion.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </Section>
                 <Section>
                     <h3 className="text-6xl sm:text-4xl text-black">The Unknown Project (Working title)</h3>

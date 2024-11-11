@@ -526,12 +526,16 @@ video {
   height: 100vh;
 }
 
-.w-1\/2 {
-  width: 50%;
+@media screen and (min-width: 1000px) {
+  .w-half {
+    width: 55%; /* Width when screen is greater than 900px */
+  }
 }
 
-.w-full {
-  width: 100%;
+@media screen and (max-width: 1000px) {
+  .w-half {
+    width: 100%; /* Width when screen is greater than 900px */
+  }
 }
 
 .max-w-sm {
@@ -552,6 +556,14 @@ video {
 
 .items-end {
   align-items: flex-end;
+}
+
+.puzzle-list {
+  margin-left: 20px;
+}
+
+.puzzle-list li {
+  margin-left: 20px;
 }
 
 .items-center {
