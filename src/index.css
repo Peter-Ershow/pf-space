@@ -617,11 +617,20 @@ body,
   border-bottom-right-radius: 5rem;
 }
 
-.text-black {
+.text-white {
   color: white;
+  opacity: 1
+}
+
+.text-yellow {
+  color: burlywood;
   opacity: 1
 }
 
 .text-blue-500 {
   color: skyblue;
+}
+
+.leading-relaxed {
+  line-height: 1.7;
 }

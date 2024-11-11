@@ -2,7 +2,6 @@
 import { Scroll} from "@react-three/drei";
 import React from "react";
 import {FaLinkedin, FaInstagram, FaGithub} from 'react-icons/fa';
-import RepositoryViewer from "./RepositoryViewer.jsx";
 
 const Section = (props) => {
     return (
@@ -10,7 +9,7 @@ const Section = (props) => {
             className={`h-screen flex flex-col justify-center w-half`}>
             <div className="items-center justify-center">
                 <div className="max-w-m w-full">
-                    <div className="bg-white rounded-r-lg px-8 py-12">
+                    <div className="bg-white rounded-r-lg px-8 py-12 leading-relaxed">
                         {props.children}
                     </div>
                 </div>
@@ -38,14 +37,9 @@ export default function InfoBoard () {
                         Hello, I am Peter
                     </ul>
                 </SectionCenter>
-                <SectionCenter>
-                    <ul className="text-full-opacity " style={{fontSize: '1.5em', color: 'white' }}>
-                        I want to tell you a little about myself, but...
-                    </ul>
-                </SectionCenter>
                 <Section>
-                    <ul className="text-full-opacity text-black">
-                        The space object in front of you is Gargantua, a black hole from Interstellar movie. Name of this space object comes from
+                    <ul className="text-full-opacity text-white">
+                        The space object in front of you is Gargantua, a black hole from Interstellar movie. It could also be from Star Wars(I mean, all that long long time ago in a galaxy far far away should have gone somewhere). Name of this space object comes from
                         French Gargantua, a giant with a very large appetite in Rabelais's The Inestimable Life of Gargantua. Rabelais derived Gargantua from the Portuguese and Spanish garganta (“throat”)
                         Very similar to to photos of M87 Blackhole, by James-Webb-Telescope, this is our most approximate presentation of black holes in multidimensional view.
                         {' '}<a href="https://www.youtube.com/shorts/hQzkbStpFC0" target="_blank" rel="noopener noreferrer" className="text-blue-500">Here</a> is an interesting Short about it.
@@ -60,40 +54,59 @@ export default function InfoBoard () {
                     </h1>
                 </SectionCenter>
                 <Section>
-                    <ul className="text-3xl sm:text-2xl text-black">
-                        Now let's try to stay in pace with the accretion disk of glowing matter, which is heated to extreme temperatures as it orbits at near-light speeds! I will try to tell you my story in the meantime
-                    </ul>
-                </Section>
-                <Section>
-                    <ul className="text-3xl sm:text-2xl text-black" style={{ opacity: 1 }}>
-                        <li>I have been studying Information Systems BSc at the Technical University of Munich from 2020 to 2024.</li>
-                        <li>My project work was based on immersive VR studies, developing a solar system explorer called Project Water.</li>
-                        <li>Players can travel between Mars, Venus, and Mercury, explore their surfaces, and learn about humanity's discoveries on those planets.</li>
-                        <li>More about the project later on the page.</li>
-                    </ul>
-                </Section>
-                <Section>
-                    <h2 className="text-5xl sm:text-4xl text-black">Experience</h2>
-                    <ul className="text-3xl sm:text-2xl text-black">
+                    <h2 className="text-5xl sm:text-4xl text-white">Experience</h2>
+                    <ul className="text-3xl sm:text-2xl text-white">
                         <li>Since April 2022, working as a Java/Kotlin/React Software Engineer at Scalable Capital</li>
+                        <li>in July 2021 and until April 2022 worked as a Java Software Engineer at Software Factory</li>
+                    </ul>
+                    <h2 className="text-5xl sm:text-4xl text-white">Backend Development</h2>
+                    <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
+                        <li>Refactored a monolithic Java service into modular microservices, improving scalability and performance.</li>
+                        <li>Developed Kotlin Lambda functions for automated cleanup, increasing efficiency and data integrity.</li>
+                        <li>Enhanced observability through automated reporting, saving significant manual effort weekly.</li>
+                        <li>Upgraded Spring Boot across multiple services for improved compatibility and performance.</li>
+                        <li>Optimized entity matching, significantly reducing latency and manual processing time.</li>
+                        <li>Strengthened security by eliminating SQL injection vulnerabilities and upgrading dependencies.</li>
+                    </ul>
+
+                    <h2 className="text-5xl sm:text-4xl text-white mt-8">Frontend Development</h2>
+                    <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
+                        <li>Improved input sanitization to eliminate XSS and CSRF vulnerabilities.</li>
+                        <li>Enhanced onboarding process, reducing time-to-completion by applying user-centric design principles.</li>
+                    </ul>
+
+                    <h2 className="text-5xl sm:text-4xl text-white mt-8">Infrastructure</h2>
+                    <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
+                        <li>Streamlined CI/CD pipelines by migrating from Jenkins to GitHub Actions, boosting efficiency.</li>
+                        <li>Configured observability for AWS Lambdas using Datadog, improving monitoring capabilities.</li>
+                        <li>Enhanced inter-service security through secret management and Terraform module instrumentation.</li>
                     </ul>
                 </Section>
                 <Section>
-                    <ul className="text-4xl sm:text-4xl text-black">
-                        <li>This place is dedicated to the art of game design, scripting, and engineering of immersive experiences for players.</li>
+                    <ul className="text-4xl sm:text-4xl text-white">
+                        <li>This place though is dedicated to the art of game design, scripting, and engineering of immersive experiences for players.</li>
+                        <li>I want to share and express my passion in creating emotions and feelings for people around me, no matter which world it is, virtual with good old PC games, or real, with some long DND nights.</li>
                     </ul>
                 </Section>
                 <Section>
-                    <h3 className="text-6xl sm:text-4xl text-black">Why are we here?</h3>
-                    <ul className="text-3xl sm:text-2xl text-black">
-                        <li>Since age 16, my hobby has been creating levels of all kinds in Unreal Engine and Unity.</li>
+                    <h3 className="text-6xl sm:text-4xl text-white">Why are we here?</h3>
+                    <ul className="text-3xl sm:text-2xl text-white">
+                        <li>Since age 16, my hobby has been creating games of all kinds, learn the coding languages by game programming(yes, I even did JavaFX) and run my board games as if I was implementing it</li>
+                    </ul>
+                    <h4 className="text-6xl sm:text-4xl text-white">Game Dev</h4>
+                    <ul className="text-3xl sm:text-2xl text-white">
+                        <li>Have done two major projects in VR, with focus on C++ well-behaving code. Currently doing a top-down RPG situated around my DND campaign's best puzzles and moments</li>
                         <li>Completed courses in C++ and Blueprints for Unreal Engine. I focused on level scripting(interaction logic), animations, and sound engineering.</li>
                         <li>All projects can be found on my {' '}<a href="https://github.com/Peter-Ershow" target="_blank" rel="noopener noreferrer" className="text-blue-500">GitHub Page</a>.</li>
                     </ul>
+                    <h4 className="text-6xl sm:text-4xl text-white">DND Campaign </h4>
+                    <ul className="text-3xl sm:text-2xl text-white">
+                        <li>After more then 3 years and around 90 almost-every-week sessions, four campaigns, two of which survived as a player, two still running as a DM, I want to share my experience and lessons</li>
+                    </ul>
                 </Section>
                 <Section>
-                    <h3 className="text-6xl sm:text-4xl text-black">Project Water (Working title)</h3>
-                    <ul className="text-3xl sm:text-3xl text-black">
+                    <h3 className="text-6xl sm:text-4xl text-white">Project Water (Working title)</h3>
+                    <ul className="text-3xl sm:text-3xl text-white">
                         <li>Developed the interaction system, including sound components, fading, level starters, gravity physics, UI Interaction, grabbing logic, and game subsystem using C++ and Blueprint languages in Unreal Engine 5.</li>
                         <li>Spaceship level designed by me with Cargo assets. View project documentation <a href="/IEEE_Conference_Template.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500">here</a>.</li>
                         <li>Demo of this project can be found <a href="https://drive.google.com/file/d/1a52gmZNsy31ftbZ_zlY4dn8eGuoV5tHH/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-blue-500">here</a>.</li>
@@ -106,34 +119,77 @@ export default function InfoBoard () {
                     </a>
                 </Section>
                 <Section>
-                    <h3 className="text-6xl sm:text-4xl text-black">Project Water (Working title)</h3>
-                    <ul className="text-3xl sm:text-3xl text-black">
-                        <li>Developed the interaction system, including sound components...</li>
-                    </ul>
-                    <RepositoryViewer username="Peter-Ershow" repoName="ProjectWater" />
-                </Section>
-                <Section>
-                    <h2 className="text-6xl sm:text-4xl text-black" >Game Puzzle Systems</h2>
+                    <h2 className="text-blue-500">ProjectWater - Implementation</h2>
 
-                    <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                    <ul className="text-3xl sm:text-2xl text-white mt-8">
                         <li>
-                            <strong>Research Focus:</strong><br />
-                            Creating my own puzzle systems using Dungeons & Dragons (DND) books and Unreal Engine (UE) with C++. My main portfolio achievement for this topic is a Mars puzzle.
+                            View the complete ProjectWater source code on GitHub:
+                            <a href="https://github.com/Peter-Ershow/ProjectWater/tree/main/Source/ProjectWater" target="_blank" rel="noopener noreferrer" className="text-blue-500"> ProjectWater GitHub Repository</a>.
                         </li>
+                    </ul>
 
+                    <h3 className="text-blue-500 mt-8 ">Components</h3>
+                    <ul className="text-3xl sm:text-2xl text-white">
+                        <li><strong>CPP_GravityItemComponent:</strong> Engineered to add dynamic gravity behavior to items, enabling realistic physics-based interactions. This component simulates gravitational pull, allowing objects to be influenced by nearby forces, creating a more immersive experience.</li>
+
+                        <li><strong>CPP_PuzzleBoxComponent:</strong> Developed to manage puzzle box interactions. Detects item placements and broadcasts events when objects are correctly positioned, linking item actions with puzzle mechanics seamlessly.</li>
+
+                        <li><strong>CPP_PuzzleItemComponent:</strong> Handles individual puzzle items by identifying them with unique tags, tracking interactions, and broadcasting events upon puzzle completion. This component ensures the smooth flow of puzzle-solving logic through tagging and event handling.</li>
+                    </ul>
+
+                    <h3 className="text-6xl sm:text-3xl text-blue-500 mt-8">Actors</h3>
+                    <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
+                        <li><strong>CPP_ActorToAssemble:</strong> Built as part of the puzzle assembly system, this actor dynamically scales based on timeline animations. It checks puzzle completion conditions and broadcasts success events when conditions are met, creating engaging puzzle dynamics.</li>
+
+                        <li><strong>CPP_PuzzleManager:</strong> The main puzzle management hub I developed to handle validation and interaction tracking. This class verifies object tags, initiates success/failure triggers, and dynamically binds events as puzzle pieces are added, delivering a responsive puzzle-solving experience.</li>
+
+                        <li><strong>CPP_Screenfade:</strong> Designed to create screen transitions with fade-in and fade-out effects. By adjusting opacity and color on a mesh overlay, it provides smooth scene changes that enhance the gameplay flow.</li>
+                    </ul>
+
+                    <h3 className="text-6xl sm:text-3xl text-blue-500 mt-8">Game Instance</h3>
+                    <ul className="text-3xl sm:text-2xl text-white">
+                        <li><strong>CPP_GameInstance:</strong> Customized to manage global game states and persistent data across levels. It tracks puzzle completion, game start times, and ensures consistent state management accessible throughout all gameplay elements.</li>
+                    </ul>
+
+                    <h3 className="text-6xl sm:text-3xl text-blue-500 mt-8">Player Structure (MVC Pattern)</h3>
+                    <ul className="text-3xl sm:text-2xl text-white">
+                        <li><strong>CPP_PlayerPawnController:</strong> Built as the main controller for player interactions, this class manages input and coordinates with <code>PawnModel</code> and <code>PawnView</code>. Key functions include playing audio feedback, handling item grabbing and dropping, and initiating screen fades, providing intuitive and immersive player control.</li>
+
+                        <li><strong>CPP_PlayerPawnModel:</strong> The player’s data layer, storing state information like grabbed items and permissions. It also logs gameplay analytics, including object interaction time, and exports this data to CSV for in-depth analysis.</li>
+
+                        <li><strong>CPP_PlayerPawnView:</strong> Developed to handle the player’s visual and audio feedback. Manages audio components (music, SFX, grab sounds) and controls screen fades for scene transitions. This class dynamically spawns <code>Screenfade</code> actors and interacts with the controller to deliver responsive player feedback.</li>
+                    </ul>
+
+                    <h3 className="text-5xl sm:text-3xl text-blue-500 mt-8">Structure Code</h3>
+                    <ul className="text-3xl sm:text-2xl text-white">
+                        <li><strong>Interactable (Interface):</strong> Defined an interface to support polymorphic interactions, allowing diverse objects to respond to player actions uniformly, enhancing gameplay flexibility.</li>
+
+                        <li><strong>EGroup (Enum):</strong> Created classifications (e.g., auditory, haptic) for organizing items or components, enhancing behavior control within the puzzle manager and other classes.</li>
+
+                        <li><strong>CPP_UtilityFunctionLibrary:</strong> A library of reusable helper functions designed for streamlined operations across the project, promoting code reuse and consistency.</li>
+                    </ul>
+                </Section>
+                <SectionCenter>
+                    <h1>
+                    </h1>
+                </SectionCenter>
+                <Section>
+                    <h2 className="text-6xl sm:text-4xl text-white" >Game Puzzle Systems</h2>
+
+                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
                         <li>
                             <strong>Generic Puzzle Subsystem:</strong><br />
                             Developed a generic puzzle subsystem with multiple parameters, aimed at creating a logical path between steps in the puzzle.
                         </li>
                     </ul>
 
-                    <h2 className="text-6xl sm:text-4xl text-black">Puzzle Workflow Example</h2>
+                    <h2 className="text-6xl sm:text-4xl text-white">Puzzle Workflow Example</h2>
 
-                    <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
                         <li>
                             <strong>Puzzle Interaction Flow:</strong>
 
-                            <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                            <ul className="text-3xl sm:text-3xl text-white puzzle-list">
                                 <li>
                                     <strong>Object Interaction:</strong><br />
                                     The player picks up an object and places it in the correct bucket.
@@ -142,7 +198,7 @@ export default function InfoBoard () {
                                 <li>
                                     <strong>Triggering the Puzzle Manager:</strong><br />
                                     This action triggers the puzzle manager with multiple parameters, such as:
-                                    <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
                                         <li>Tags of the object</li>
                                         <li>Index in the puzzle</li>
                                         <li>Other tags (e.g., Niagara index, and others)</li>
@@ -152,7 +208,7 @@ export default function InfoBoard () {
                                 <li>
                                     <strong>Puzzle Manager Responsibilities:</strong><br />
                                     The puzzle manager is responsible for:
-                                    <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
                                         <li>Assembling the solution component</li>
                                         <li>Triggering success/failure events</li>
                                     </ul>
@@ -163,10 +219,10 @@ export default function InfoBoard () {
                         <li>
                             <strong>Multiple Puzzle Managers:</strong><br />
 
-                            <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                            <ul className="text-3xl sm:text-3xl text-white puzzle-list">
                                 <li><strong>Modular Puzzle Managers:</strong><br />
                                     There can be different puzzle managers responsible for different types of puzzles, such as:</li>
-                                <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                                <ul className="text-3xl sm:text-3xl text-white puzzle-list">
                                     <li>Assemble puzzles</li>
                                     <li>Logical sequence puzzles</li>
                                     <li>And others</li>
@@ -175,9 +231,9 @@ export default function InfoBoard () {
                         </li>
                     </ul>
 
-                    <h2 className="text-6xl sm:text-4xl text-black">Example: Mars Puzzle</h2>
+                    <h2 className="text-6xl sm:text-4xl text-white">Example: Mars Puzzle</h2>
 
-                    <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
                         <li>
                             <strong>Puzzle Scenario:</strong><br />
                             In my example, I implemented an assemble puzzle focused on building an arm with a turret for a rover on Mars.
@@ -186,7 +242,7 @@ export default function InfoBoard () {
                         <li>
                             <strong>Guidance Approaches:</strong><br />
                             There are three different approaches to guiding the player:
-                            <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                            <ul className="text-3xl sm:text-3xl text-white puzzle-list">
                                 <li><strong>Visual:</strong> Text-based guidance.</li>
                                 <li><strong>Auditory:</strong> Narrator explanations in the background.</li>
                                 <li><strong>Haptic:</strong> Stronger haptics on wrong choices.</li>
@@ -194,9 +250,8 @@ export default function InfoBoard () {
                         </li>
 
                         <li>
-                            <strong>Dynamic Delegates for Interaction:</strong>
-
-                            <ul className="text-3xl sm:text-3xl text-black puzzle-list">
+                            <strong>Dynamic Delegates using Event-driven architecture for Interaction:</strong>
+                            <ul className="text-3xl sm:text-3xl text-white puzzle-list">
                                 <li>
                                     <strong>Overlap Event Handling:</strong><br />
                                     Whenever a puzzle component overlaps with an actor, it adds a dynamic delegate to the release event on the held component. If the overlap stops, the delegate is removed (see the attached screenshot).
@@ -216,8 +271,8 @@ export default function InfoBoard () {
                     </ul>
                 </Section>
                 <Section>
-                    <h3 className="text-6xl sm:text-4xl text-black">The Unknown Project (Working title)</h3>
-                    <ul className="text-3xl sm:text-3xl text-black">
+                    <h3 className="text-6xl sm:text-4xl text-white">The Unknown Project (Working title)</h3>
+                    <ul className="text-3xl sm:text-3xl text-white">
                         <li>First Person View Survival Story Game</li>
                         <li>Developed the interaction system, inventory System, stackable, interactable, pickable, wearable and eatable items interfaces. Worked on doors interaction, animation blueprints and grabbing logic. Project is C++ as much as possible</li>
                         <a href="/UMLClassDiagram.png" target="_blank" rel="noopener noreferrer">
@@ -229,8 +284,8 @@ export default function InfoBoard () {
                     </ul>
                 </Section>
                 <Section>
-                    <h3 className="text-6xl sm:text-4xl text-black">CI/CD</h3>
-                    <ul className="text-3xl sm:text-2xl text-black" style={{ opacity: 1 }}>
+                    <h3 className="text-6xl sm:text-4xl text-white">CI/CD</h3>
+                    <ul className="text-3xl sm:text-2xl text-white" style={{ opacity: 1 }}>
                         <li>All of my projects are using Perforce deployment and source control integrated in the Engine</li>
                         <li>Depending on the size of the container Cooking and Packaging of projects can also be enabled for an Unreal Project. If it's a single person project or a 3JS website like this, I use GitHub Actions.</li>
                         <li>Here you can find an example history graph of one of my latest projects</li>
@@ -240,15 +295,15 @@ export default function InfoBoard () {
                     </a>
                 </Section>
                 <Section>
-                    <h3 className="text-5xl sm:text-4xl text-black mt-4">Certifications:</h3>
-                    <ul className="text-3xl sm:text-2xl text-black">
+                    <h3 className="text-5xl sm:text-4xl text-white mt-4">Certifications:</h3>
+                    <ul className="text-3xl sm:text-2xl text-white">
                         <li><a href="https://www.udemy.com/certificate/UC-8ab49b46-81ce-4144-bb59-74c19eedc626/" target="_blank" rel="noopener noreferrer" className="text-blue-500">Unreal Engine 5 C++ Developer</a>.</li>
                         <li><a href="https://www.tutorialspoint.com/market/certificate.jsp/TP-Q1S83W7N" target="_blank" rel="noopener noreferrer" className="text-blue-500">Unreal Engine 5 Blueprints 2D RPG Platformer</a>.</li>
                     </ul>
                 </Section>
                 <Section>
-                    <h3 className="text-6xl sm:text-4xl text-black">This page here</h3>
-                    <ul className="text-3xl sm:text-2xl text-black" style={{ opacity: 1 }}>
+                    <h3 className="text-6xl sm:text-4xl text-white">This page here</h3>
+                    <ul className="text-3xl sm:text-2xl text-white" style={{ opacity: 1 }}>
                         <li>This website is written in React JS completely by me using animations in theatre js library</li>
                         <li>I use GitHub Actions for deployment and host it via Pages here :
                             {' '}<a href="https://github.com/Peter-Ershow/pf-space" target="_blank" rel="noopener noreferrer" className="text-blue-500">GitHub Repository</a>.
@@ -257,13 +312,13 @@ export default function InfoBoard () {
                     </ul>
                 </Section>
                 <Section>
-                    <h3 className="text-5xl sm:text-4xl text-black">Contact me at: ershowpeter@gmail.com</h3>
-                    <p className="text-5xl sm:text-4xl text-black mt-4">Credits:</p>
-                    <ul className="text-3xl sm:text-2xl text-black">
+                    <h3 className="text-5xl sm:text-4xl text-white">Contact me at: ershowpeter@gmail.com</h3>
+                    <p className="text-5xl sm:text-4xl text-white mt-4">Credits:</p>
+                    <ul className="text-3xl sm:text-2xl text-white">
                         <li>Thanks to <a href="https://www.solarsystemscope.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500">Solar System Scope</a> for fabulous star textures.</li>
                         <li>This work is based on <a href="https://sketchfab.com/3d-models/blackhole-74cbeaeae2174a218fe9455d77902b5c" target="_blank" rel="noopener noreferrer" className="text-blue-500">"Blackhole"</a> by <a href="https://sketchfab.com/rubykamen" target="_blank" rel="noopener noreferrer" className="text-blue-500">rubykamen</a> licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-blue-500">CC-BY-4.0</a>.</li>
                     </ul>
-                    <p className="text-3xl sm:text-2xl text-black mt-4">All projects listed on the page are used purely for educational purposes and were never used for commercial purposes.</p>
+                    <p className="text-3xl sm:text-2xl text-white mt-4">All projects listed on the page are used purely for educational purposes and were never used for commercial purposes.</p>
                     <div className="flex space-x-4 mt-2">
                         <a href="https://www.linkedin.com/in/ershpeter" target="_blank" rel="noopener noreferrer">
                             <FaLinkedin size={30} color="white" />
