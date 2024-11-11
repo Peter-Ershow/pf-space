@@ -110,6 +110,11 @@ export default function InfoBoard () {
                         <li>Developed the interaction system, including sound components, fading, level starters, gravity physics, UI Interaction, grabbing logic, and game subsystem using C++ and Blueprint languages in Unreal Engine 5.</li>
                         <li>Spaceship level designed by me with Cargo assets. View project documentation <a href="/IEEE_Conference_Template.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500">here</a>.</li>
                         <li>Demo of this project can be found <a href="https://drive.google.com/file/d/1a52gmZNsy31ftbZ_zlY4dn8eGuoV5tHH/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-blue-500">here</a>.</li>
+
+                        <li>
+                         The game was furthermore developed into my <a href="/Bachelor_Thesis__Ershov%20.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500">thesis at TUM</a>. The implementation and structure is described below. <a href="https://drive.google.com/file/d/1zzZdDhrOOYaSoKhH55WhckeHPjQeBUrg/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Here</a>. you can find a game demo captured on Meta Quest Pro
+
+                        </li>
                     </ul>
                     <a href="/img_1.png" target="_blank" rel="noopener noreferrer">
                         <img src="/img_1.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '30%', marginTop: '20px' }} />
@@ -118,9 +123,12 @@ export default function InfoBoard () {
                         <img src="/img_2.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '20%', marginTop: '20px' }} />
                     </a>
                 </Section>
+                <SectionCenter>
+                    <h1>
+                    </h1>
+                </SectionCenter>
                 <Section>
                     <h2 className="text-blue-500">ProjectWater - Implementation</h2>
-
                     <ul className="text-3xl sm:text-2xl text-white mt-8">
                         <li>
                             View the complete ProjectWater source code on GitHub:
