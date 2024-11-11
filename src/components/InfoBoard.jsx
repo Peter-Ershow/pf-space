@@ -6,7 +6,7 @@ import {FaLinkedin, FaInstagram, FaGithub} from 'react-icons/fa';
 const Section = (props) => {
     return (
         <section
-            className={`h-screen flex flex-col justify-center w-half`}>
+            className={`h-screen flex flex-col justify-center w-half mt-16`}>
             <div className="items-center justify-center">
                 <div className="max-w-m w-full">
                     <div className="bg-white rounded-r-lg px-8 py-12 leading-relaxed">
@@ -31,7 +31,7 @@ const SectionCenter = (props) => {
 export default function InfoBoard () {
     return (
         <Scroll html>
-            <div>
+            <div className={'mt-16'}>
                 <SectionCenter>
                     <ul style={{fontSize: '3em', color: 'white' }}>
                         Hello, I am Peter
@@ -129,14 +129,14 @@ export default function InfoBoard () {
                 </SectionCenter>
                 <Section>
                     <h2 className="text-blue-500">ProjectWater - Implementation</h2>
-                    <ul className="text-3xl sm:text-2xl text-white mt-8">
+                    <ul className="text-3xl sm:text-2xl text-white">
                         <li>
                             View the complete ProjectWater source code on GitHub:
                             <a href="https://github.com/Peter-Ershow/ProjectWater/tree/main/Source/ProjectWater" target="_blank" rel="noopener noreferrer" className="text-blue-500"> ProjectWater GitHub Repository</a>.
                         </li>
                     </ul>
 
-                    <h3 className="text-blue-500 mt-8 ">Components</h3>
+                    <h3 className="text-blue-500 mt-4 ">Components</h3>
                     <ul className="text-3xl sm:text-2xl text-white">
                         <li><strong>CPP_GravityItemComponent:</strong> Engineered to add dynamic gravity behavior to items, enabling realistic physics-based interactions. This component simulates gravitational pull, allowing objects to be influenced by nearby forces, creating a more immersive experience.</li>
 
@@ -145,7 +145,7 @@ export default function InfoBoard () {
                         <li><strong>CPP_PuzzleItemComponent:</strong> Handles individual puzzle items by identifying them with unique tags, tracking interactions, and broadcasting events upon puzzle completion. This component ensures the smooth flow of puzzle-solving logic through tagging and event handling.</li>
                     </ul>
 
-                    <h3 className="text-6xl sm:text-3xl text-blue-500 mt-8">Actors</h3>
+                    <h3 className="text-6xl sm:text-3xl text-blue-500 mt-4">Actors</h3>
                     <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
                         <li><strong>CPP_ActorToAssemble:</strong> Built as part of the puzzle assembly system, this actor dynamically scales based on timeline animations. It checks puzzle completion conditions and broadcasts success events when conditions are met, creating engaging puzzle dynamics.</li>
 
@@ -154,12 +154,12 @@ export default function InfoBoard () {
                         <li><strong>CPP_Screenfade:</strong> Designed to create screen transitions with fade-in and fade-out effects. By adjusting opacity and color on a mesh overlay, it provides smooth scene changes that enhance the gameplay flow.</li>
                     </ul>
 
-                    <h3 className="text-6xl sm:text-3xl text-blue-500 mt-8">Game Instance</h3>
+                    <h3 className="text-6xl sm:text-3xl text-blue-500 mt-4">Game Instance</h3>
                     <ul className="text-3xl sm:text-2xl text-white">
                         <li><strong>CPP_GameInstance:</strong> Customized to manage global game states and persistent data across levels. It tracks puzzle completion, game start times, and ensures consistent state management accessible throughout all gameplay elements.</li>
                     </ul>
 
-                    <h3 className="text-6xl sm:text-3xl text-blue-500 mt-8">Player Structure (MVC Pattern)</h3>
+                    <h3 className="text-6xl sm:text-3xl text-blue-500 mt-4">Player Structure (MVC Pattern)</h3>
                     <ul className="text-3xl sm:text-2xl text-white">
                         <li><strong>CPP_PlayerPawnController:</strong> Built as the main controller for player interactions, this class manages input and coordinates with <code>PawnModel</code> and <code>PawnView</code>. Key functions include playing audio feedback, handling item grabbing and dropping, and initiating screen fades, providing intuitive and immersive player control.</li>
 
@@ -168,7 +168,7 @@ export default function InfoBoard () {
                         <li><strong>CPP_PlayerPawnView:</strong> Developed to handle the player’s visual and audio feedback. Manages audio components (music, SFX, grab sounds) and controls screen fades for scene transitions. This class dynamically spawns <code>Screenfade</code> actors and interacts with the controller to deliver responsive player feedback.</li>
                     </ul>
 
-                    <h3 className="text-5xl sm:text-3xl text-blue-500 mt-8">Structure Code</h3>
+                    <h3 className="text-5xl sm:text-3xl text-blue-500 mt-4">Structure Code</h3>
                     <ul className="text-3xl sm:text-2xl text-white">
                         <li><strong>Interactable (Interface):</strong> Defined an interface to support polymorphic interactions, allowing diverse objects to respond to player actions uniformly, enhancing gameplay flexibility.</li>
 
