@@ -635,6 +635,10 @@ body,
   line-height: 1.7;
 }
 
+.container > * + * {
+  margin-top: 3rem; /* 48px */
+}
+
 .mt-8 {
   margin-top: 8rem;
 }
@@ -644,4 +648,8 @@ body,
 }
 .mt-16 {
   margin-top: 16rem;
+}
+
+.space-y-12 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 6rem; /* 48px */
 }

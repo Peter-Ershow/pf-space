@@ -6,7 +6,7 @@ import {FaLinkedin, FaInstagram, FaGithub} from 'react-icons/fa';
 const Section = (props) => {
     return (
         <section
-            className={`h-screen flex flex-col justify-center w-half mt-16`}>
+            className={`flex flex-col justify-center w-half mt-16`}>
             <div className="items-center justify-center">
                 <div className="max-w-m w-full">
                     <div className="bg-white rounded-r-lg px-8 py-12 leading-relaxed">
@@ -21,7 +21,7 @@ const Section = (props) => {
 const SectionCenter = (props) => {
     return (
         <section
-            className={`w-full h-screen flex flex-col justify-center items-center`}
+            className={`w-full flex flex-col justify-center items-center mt-16`}
         >
             {props.children}
         </section>
