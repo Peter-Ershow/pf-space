@@ -650,6 +650,10 @@ body,
   margin-top: 16rem;
 }
 
+.mt-32 {
+  margin-top: 32rem;
+}
+
 .space-y-12 > :not([hidden]) ~ :not([hidden]) {
   margin-top: 6rem; /* 48px */
 }

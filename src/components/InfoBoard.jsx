@@ -42,7 +42,7 @@ export default function InfoBoard () {
                         The space object in front of you is Gargantua, a black hole from Interstellar movie. It could also be from Star Wars(I mean, all that long long time ago in a galaxy far far away should have gone somewhere). Name of this space object comes from
                         French Gargantua, a giant with a very large appetite in Rabelais's The Inestimable Life of Gargantua. Rabelais derived Gargantua from the Portuguese and Spanish garganta (“throat”)
                         Very similar to to photos of M87 Blackhole, by James-Webb-Telescope, this is our most approximate presentation of black holes in multidimensional view.
-                        {' '}<a href="https://www.youtube.com/shorts/hQzkbStpFC0" target="_blank" rel="noopener noreferrer" className="text-blue-500">Here</a> is an interesting Short about it.
+                        {' '}<a href="https://youtube.com/shorts/SOWoHBoZ360?si=VhaHGPoexIa6oxde" target="_blank" rel="noopener noreferrer" className="text-blue-500">Here</a> is an interesting Short about it.
                     </ul>
                 </Section>
                 <SectionCenter>
