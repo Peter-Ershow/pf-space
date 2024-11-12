@@ -318,7 +318,7 @@ export default function InfoBoard () {
                     </ul>
                 </Section>
                 <Section>
-                    <h3 className="text-6xl sm:text-4xl text-white">CI/CD</h3>
+                    <h3 className="text-6xl sm:text-4xl text-purple">CI/CD</h3>
                     <ul className="text-3xl sm:text-2xl text-white" style={{ opacity: 1 }}>
                         <li>All of my projects are using Perforce deployment and source control integrated in the Engine</li>
                         <li>Depending on the size of the container Cooking and Packaging of projects can also be enabled for an Unreal Project. If it's a single person project or a 3JS website like this, I use GitHub Actions.</li>
@@ -329,19 +329,19 @@ export default function InfoBoard () {
                     </a>
                 </Section>
                 <Section>
-                    <h3 className="text-5xl sm:text-4xl text-white mt-4">Certifications:</h3>
+                    <h3 className="text-5xl sm:text-4xl text-purple mt-4">Certifications:</h3>
                     <ul className="text-3xl sm:text-2xl text-white">
                         <li><a href="https://www.udemy.com/certificate/UC-8ab49b46-81ce-4144-bb59-74c19eedc626/" target="_blank" rel="noopener noreferrer" className="text-blue-500">Unreal Engine 5 C++ Developer</a>.</li>
                         <li><a href="https://www.tutorialspoint.com/market/certificate.jsp/TP-Q1S83W7N" target="_blank" rel="noopener noreferrer" className="text-blue-500">Unreal Engine 5 Blueprints 2D RPG Platformer</a>.</li>
                     </ul>
                 </Section>
                 <Section>
-                    <h2 className="text-5xl sm:text-4xl text-white">Other Coding Experience</h2>
+                    <h2 className="text-5xl sm:text-4xl text-purple">Other Coding Experience</h2>
                     <ul className="text-3xl sm:text-2xl text-white">
                         <li>Since April 2022, working as a Java/Kotlin/React Software Engineer at Scalable Capital</li>
                         <li>in July 2021 and until April 2022 worked as a Java Software Engineer at Software Factory</li>
                     </ul>
-                    <h2 className="text-5xl sm:text-4xl text-white">Backend Development</h2>
+                    <h2 className="text-5xl sm:text-4xl text-purple">Backend Development</h2>
                     <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
                         <li>Refactored a monolithic Java service into modular microservices, improving scalability and performance.</li>
                         <li>Developed Kotlin Lambda functions for automated cleanup, increasing efficiency and data integrity.</li>
@@ -351,13 +351,13 @@ export default function InfoBoard () {
                         <li>Strengthened security by eliminating SQL injection vulnerabilities and upgrading dependencies.</li>
                     </ul>
 
-                    <h2 className="text-5xl sm:text-4xl text-white mt-8">Frontend Development</h2>
+                    <h2 className="text-5xl sm:text-4xl text-purple mt-8">Frontend Development</h2>
                     <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
                         <li>Improved input sanitization to eliminate XSS and CSRF vulnerabilities.</li>
                         <li>Enhanced onboarding process, reducing time-to-completion by applying user-centric design principles.</li>
                     </ul>
 
-                    <h2 className="text-5xl sm:text-4xl text-white mt-8">Infrastructure</h2>
+                    <h2 className="text-5xl sm:text-4xl text-purple mt-8">Infrastructure</h2>
                     <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
                         <li>Streamlined CI/CD pipelines by migrating from Jenkins to GitHub Actions, boosting efficiency.</li>
                         <li>Configured observability for AWS Lambdas using Datadog, improving monitoring capabilities.</li>
@@ -365,7 +365,7 @@ export default function InfoBoard () {
                     </ul>
                 </Section>
                 <Section>
-                    <h3 className="text-6xl sm:text-4xl text-white">This page here</h3>
+                    <h3 className="text-6xl sm:text-4xl text-purple">This page here</h3>
                     <ul className="text-3xl sm:text-2xl text-white" style={{ opacity: 1 }}>
                         <li>This website is written in React JS completely by me using animations in theatre js library</li>
                         <li>I use GitHub Actions for deployment and host it via Pages here :
@@ -375,8 +375,8 @@ export default function InfoBoard () {
                     </ul>
                 </Section>
                 <Section>
-                    <h3 className="text-5xl sm:text-4xl text-white">Contact me at: ershowpeter@gmail.com</h3>
-                    <p className="text-5xl sm:text-4xl text-white mt-4">Credits:</p>
+                    <h3 className="text-5xl sm:text-4xl text-purple">Contact me at: ershowpeter@gmail.com</h3>
+                    <p className="text-5xl sm:text-4xl text-purple mt-4">Credits:</p>
                     <ul className="text-3xl sm:text-2xl text-white">
                         <li>Thanks to <a href="https://www.solarsystemscope.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500">Solar System Scope</a> for fabulous star textures.</li>
                         <li>This work is based on <a href="https://sketchfab.com/3d-models/blackhole-74cbeaeae2174a218fe9455d77902b5c" target="_blank" rel="noopener noreferrer" className="text-blue-500">"Blackhole"</a> by <a href="https://sketchfab.com/rubykamen" target="_blank" rel="noopener noreferrer" className="text-blue-500">rubykamen</a> licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" className="text-blue-500">CC-BY-4.0</a>.</li>
