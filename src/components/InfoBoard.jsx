@@ -287,7 +287,7 @@ export default function InfoBoard () {
                 <Section>
                     <h3 className="text-6xl sm:text-4xl text-purple">The Obstacle Assault</h3>
                     <ul className="text-3xl sm:text-3xl text-white">
-                        <li className={"text-purple"}>First Person Puzzle RPG Level</li>
+                        <li className={"text-purple"}>Third Person View Puzzle RPG Level</li>
                         <a href="https://github.com/Peter-Ershow/ObstacleAssault" target="_blank" rel="noopener noreferrer" className="text-blue-500"> GitHub Repository</a>.
                         <DriveVideoViewer fileId={"1JvxKmCTSkND5NaZA6u39iOu1yaJeUjLk"}/>
                         <li>In the beginning Blueprints and later migrated to C++ project, includes moving objects mechanics, affecting the collision of a player. In this project I wanted to research collision effects on the player</li>
