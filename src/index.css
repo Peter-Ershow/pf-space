@@ -631,6 +631,10 @@ body,
   color: skyblue;
 }
 
+.text-purple {
+  color: peachpuff;
+}
+
 .leading-relaxed {
   line-height: 1.7;
 }
@@ -656,4 +660,8 @@ body,
 
 .space-y-12 > :not([hidden]) ~ :not([hidden]) {
   margin-top: 6rem; /* 48px */
+}
+
+.text-border {
+  text-shadow: 0.5px 0.5px 1px #ffffff, -0.5px -0.5px 1px #ffffff, -0.5px 0.5px 1px #ffffff, 0.5px -0.5px 1px #ffffff;
 }

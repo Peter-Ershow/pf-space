@@ -37,14 +37,6 @@ export default function InfoBoard () {
                         Hello, I am Peter
                     </ul>
                 </SectionCenter>
-                <Section>
-                    <ul className="text-full-opacity text-white">
-                        The space object in front of you is Gargantua, a black hole from Interstellar movie. It could also be from Star Wars(I mean, all that long long time ago in a galaxy far far away should have gone somewhere). Name of this space object comes from
-                        French Gargantua, a giant with a very large appetite in Rabelais's The Inestimable Life of Gargantua. Rabelais derived Gargantua from the Portuguese and Spanish garganta (“throat”)
-                        Very similar to to photos of M87 Blackhole, by James-Webb-Telescope, this is our most approximate presentation of black holes in multidimensional view.
-                        {' '}<a href="https://youtube.com/shorts/SOWoHBoZ360?si=VhaHGPoexIa6oxde" target="_blank" rel="noopener noreferrer" className="text-blue-500">Here</a> is an interesting Short about it.
-                    </ul>
-                </Section>
                 <SectionCenter>
                     <h1>
                     </h1>
@@ -53,55 +45,28 @@ export default function InfoBoard () {
                     <h1>
                     </h1>
                 </SectionCenter>
-                <Section>
-                    <h2 className="text-5xl sm:text-4xl text-white">Experience</h2>
-                    <ul className="text-3xl sm:text-2xl text-white">
-                        <li>Since April 2022, working as a Java/Kotlin/React Software Engineer at Scalable Capital</li>
-                        <li>in July 2021 and until April 2022 worked as a Java Software Engineer at Software Factory</li>
-                    </ul>
-                    <h2 className="text-5xl sm:text-4xl text-white">Backend Development</h2>
-                    <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
-                        <li>Refactored a monolithic Java service into modular microservices, improving scalability and performance.</li>
-                        <li>Developed Kotlin Lambda functions for automated cleanup, increasing efficiency and data integrity.</li>
-                        <li>Enhanced observability through automated reporting, saving significant manual effort weekly.</li>
-                        <li>Upgraded Spring Boot across multiple services for improved compatibility and performance.</li>
-                        <li>Optimized entity matching, significantly reducing latency and manual processing time.</li>
-                        <li>Strengthened security by eliminating SQL injection vulnerabilities and upgrading dependencies.</li>
-                    </ul>
-
-                    <h2 className="text-5xl sm:text-4xl text-white mt-8">Frontend Development</h2>
-                    <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
-                        <li>Improved input sanitization to eliminate XSS and CSRF vulnerabilities.</li>
-                        <li>Enhanced onboarding process, reducing time-to-completion by applying user-centric design principles.</li>
-                    </ul>
-
-                    <h2 className="text-5xl sm:text-4xl text-white mt-8">Infrastructure</h2>
-                    <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
-                        <li>Streamlined CI/CD pipelines by migrating from Jenkins to GitHub Actions, boosting efficiency.</li>
-                        <li>Configured observability for AWS Lambdas using Datadog, improving monitoring capabilities.</li>
-                        <li>Enhanced inter-service security through secret management and Terraform module instrumentation.</li>
-                    </ul>
-                </Section>
                 <Section>
                     <ul className="text-4xl sm:text-4xl text-white">
-                        <li>This place though is dedicated to the art of game design, scripting, and engineering of immersive experiences for players.</li>
-                        <li>I want to share and express my passion in creating emotions and feelings for people around me, no matter which world it is, virtual with good old PC games, or real, with some long DND nights.</li>
+                        <h2 className="text-6xl sm:text-4xl text-purple">My Programmer Portfolio</h2>
+                        <li>This place here is dedicated to the art of game design, scripting, and engineering of immersive experiences for players.</li>
+                        <li>I am looking for a professional engagement in top-tier game development. Looking for C++ or Blueprint Developer positions in gameplay programming, scripting or other programming positions.</li>
+                        <li>I want to share my passion in creating emotions and feelings for people around me, no matter which world it is, virtual with good old PC games, or real, with some long DND nights.</li>
                     </ul>
                 </Section>
                 <Section>
-                    <h3 className="text-6xl sm:text-4xl text-white">Why are we here?</h3>
+                    <h2 className="text-6xl sm:text-4xl text-purple">Why are we here?</h2>
                     <ul className="text-3xl sm:text-2xl text-white">
-                        <li>Since age 16, my hobby has been creating games of all kinds, learn the coding languages by game programming(yes, I even did JavaFX) and run my board games as if I was implementing it</li>
+                        <li>Since age 16, my hobby has been creating levels of all kinds, learn the coding languages by game programming(yes, I even did JavaFX) and run my board games as if I was implementing it</li>
                     </ul>
-                    <h4 className="text-6xl sm:text-4xl text-white">Game Dev</h4>
+                    <h2 className="text-6xl sm:text-4xl text-purple  mt-4">Game Dev</h2>
                     <ul className="text-3xl sm:text-2xl text-white">
-                        <li>Have done two major projects in VR, with focus on C++ well-behaving code. Currently doing a top-down RPG situated around my DND campaign's best puzzles and moments</li>
-                        <li>Completed courses in C++ and Blueprints for Unreal Engine. I focused on level scripting(interaction logic), animations, and sound engineering.</li>
+                        <h4 className="text-6xl sm:text-4xl text-purple"> Virtual Reality </h4>
+                        <li>Have done two major projects in VR, with focus on C++ code. Currently doing a top-down RPG situated around my DND campaigns best puzzles and moments</li>
+                        <h4 className="text-6xl sm:text-4xl text-purple"> Owned Projects </h4>
+                        <li>Completed multiple courses and projects in C++ and Blueprints for Unreal Engine. I focused on level scripting(interaction logic), animations, and sound engineering.</li>
                         <li>All projects can be found on my {' '}<a href="https://github.com/Peter-Ershow" target="_blank" rel="noopener noreferrer" className="text-blue-500">GitHub Page</a>.</li>
-                    </ul>
-                    <h4 className="text-6xl sm:text-4xl text-white">DND Campaign </h4>
-                    <ul className="text-3xl sm:text-2xl text-white">
-                        <li>After more then 3 years and around 90 almost-every-week sessions, four campaigns, two of which survived as a player, two still running as a DM, I want to share my experience and lessons</li>
+                        <h4 className="text-6xl sm:text-4xl text-purple"> Research </h4>
+                        <li>Conducted a game project in 2024 that included different hints mechanics, based on the given human sense(Visual, Auditory, Haptic). Ran a research and a survey on 40 people</li>
                     </ul>
                 </Section>
                 <Section>
@@ -307,6 +272,35 @@ export default function InfoBoard () {
                     <ul className="text-3xl sm:text-2xl text-white">
                         <li><a href="https://www.udemy.com/certificate/UC-8ab49b46-81ce-4144-bb59-74c19eedc626/" target="_blank" rel="noopener noreferrer" className="text-blue-500">Unreal Engine 5 C++ Developer</a>.</li>
                         <li><a href="https://www.tutorialspoint.com/market/certificate.jsp/TP-Q1S83W7N" target="_blank" rel="noopener noreferrer" className="text-blue-500">Unreal Engine 5 Blueprints 2D RPG Platformer</a>.</li>
+                    </ul>
+                </Section>
+                <Section>
+                    <h2 className="text-5xl sm:text-4xl text-white">Other Coding Experience</h2>
+                    <ul className="text-3xl sm:text-2xl text-white">
+                        <li>Since April 2022, working as a Java/Kotlin/React Software Engineer at Scalable Capital</li>
+                        <li>in July 2021 and until April 2022 worked as a Java Software Engineer at Software Factory</li>
+                    </ul>
+                    <h2 className="text-5xl sm:text-4xl text-white">Backend Development</h2>
+                    <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
+                        <li>Refactored a monolithic Java service into modular microservices, improving scalability and performance.</li>
+                        <li>Developed Kotlin Lambda functions for automated cleanup, increasing efficiency and data integrity.</li>
+                        <li>Enhanced observability through automated reporting, saving significant manual effort weekly.</li>
+                        <li>Upgraded Spring Boot across multiple services for improved compatibility and performance.</li>
+                        <li>Optimized entity matching, significantly reducing latency and manual processing time.</li>
+                        <li>Strengthened security by eliminating SQL injection vulnerabilities and upgrading dependencies.</li>
+                    </ul>
+
+                    <h2 className="text-5xl sm:text-4xl text-white mt-8">Frontend Development</h2>
+                    <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
+                        <li>Improved input sanitization to eliminate XSS and CSRF vulnerabilities.</li>
+                        <li>Enhanced onboarding process, reducing time-to-completion by applying user-centric design principles.</li>
+                    </ul>
+
+                    <h2 className="text-5xl sm:text-4xl text-white mt-8">Infrastructure</h2>
+                    <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
+                        <li>Streamlined CI/CD pipelines by migrating from Jenkins to GitHub Actions, boosting efficiency.</li>
+                        <li>Configured observability for AWS Lambdas using Datadog, improving monitoring capabilities.</li>
+                        <li>Enhanced inter-service security through secret management and Terraform module instrumentation.</li>
                     </ul>
                 </Section>
                 <Section>
