@@ -2,6 +2,7 @@
 import { Scroll} from "@react-three/drei";
 import React from "react";
 import {FaLinkedin, FaInstagram, FaGithub} from 'react-icons/fa';
+import DriveVideoViewer from "./DriveVideoViewer.jsx";
 
 const Section = (props) => {
     return (
@@ -69,16 +70,23 @@ export default function InfoBoard () {
                         <li>Conducted a game project in 2024 that included different hints mechanics, based on the given human sense(Visual, Auditory, Haptic). Ran a research and a survey on 40 people</li>
                     </ul>
                 </Section>
+                <SectionCenter>
+                    <h1>
+                    </h1>
+                </SectionCenter>
                 <Section>
-                    <h3 className="text-6xl sm:text-4xl text-white">Project Water (Working title)</h3>
+                    <h3 className="text-6xl sm:text-4xl text-purple">Project Water (Working title)</h3>
                     <ul className="text-3xl sm:text-3xl text-white">
                         <li>Developed the interaction system, including sound components, fading, level starters, gravity physics, UI Interaction, grabbing logic, and game subsystem using C++ and Blueprint languages in Unreal Engine 5.</li>
                         <li>Spaceship level designed by me with Cargo assets. View project documentation <a href="/IEEE_Conference_Template.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500">here</a>.</li>
-                        <li>Demo of this project can be found <a href="https://drive.google.com/file/d/1a52gmZNsy31ftbZ_zlY4dn8eGuoV5tHH/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-blue-500">here</a>.</li>
-
+                        <li><DriveVideoViewer fileId="1a52gmZNsy31ftbZ_zlY4dn8eGuoV5tHH" /> </li>
+                        <li></li>
+                        <li>This project included a lot of Blueprint code to maintain ease of understanding for another user of the project. It was completely migrated to C++ by me for a thesis, described below.</li>
                         <li>
-                         The game was furthermore developed into my <a href="/Bachelor_Thesis__Ershov%20.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500">thesis at TUM</a>. The implementation and structure is described below. <a href="https://drive.google.com/file/d/1zzZdDhrOOYaSoKhH55WhckeHPjQeBUrg/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Here</a>. you can find a game demo captured on Meta Quest Pro
-
+                         The game was furthermore developed into my <a href="/Bachelor_Thesis__Ershov%20.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500">thesis at TUM</a>. The implementation and structure is described below.
+                            Here you can find a game demo captured on Meta Quest Pro. Compared to the first video, it includes more game mechanics, differentiated based on the hint group.
+                            It furthermore includes puzzle and gravity related effects.
+                            <DriveVideoViewer fileId={"1zzZdDhrOOYaSoKhH55WhckeHPjQeBUrg"}/>
                         </li>
                     </ul>
                     <a href="/img_1.png" target="_blank" rel="noopener noreferrer">
@@ -93,7 +101,126 @@ export default function InfoBoard () {
                     </h1>
                 </SectionCenter>
                 <Section>
-                    <h2 className="text-blue-500">ProjectWater - Implementation</h2>
+                    <h2 className="text-6xl sm:text-4xl text-purple" >Game Puzzle Systems</h2>
+
+                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
+                        <li>
+                            <strong className={"text-purple"}>Generic Puzzle Subsystem:</strong><br />
+                            Developed a generic puzzle subsystem with multiple parameters, aimed at creating a logical path between steps in the puzzle.
+                        </li>
+                    </ul>
+
+                    <h2 className="text-6xl sm:text-4xl text-purple">Puzzle Workflow Example</h2>
+
+                    <ul className="text-3xl sm:text-3xl text-white puzzle-list text-purple">
+                        <li>
+                            <strong>Puzzle Interaction Flow:</strong>
+
+                            <ul className="text-3xl sm:text-3xl text-white puzzle-list">
+                                <li>
+                                    <strong className={"text-purple"}>Object Interaction:</strong><br />
+                                    The player picks up an object and places it in the correct bucket.
+                                </li>
+                                <li>
+                                    <strong  className={"text-purple"}>Puzzle Components Interaction:</strong><br />
+                                    There are two puzzle components::
+                                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
+                                        <li>Item Component: Responsible for triggering item connected behaviour: animations, logic</li>
+                                        <li>Box Component: Verifying collision, tag of an actor, indexes and other and publishes events to Puzzle Manager</li>
+                                        <li>In Project water: Events OnGrabbed and On Released. Each time object is picked, the box starts to listen to a release event with it.</li>
+                                        <li>If its released, verify if it collides with the box and verify correctness - In any case stop listening until picked up again</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong  className={"text-purple"}>Triggering the Puzzle Manager:</strong><br />
+                                    This event triggers the puzzle manager with multiple parameters, such as:
+                                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
+                                        <li>Tags of the object</li>
+                                        <li>Index in the puzzle</li>
+                                        <li>Other tags (e.g., Niagara index, and others)</li>
+                                        <li>In Project water: Verifying tags and triggering the puzzle assembly based on it</li>
+                                    </ul>
+                                    The manager can afterwords trigger the aftermath logic
+                                </li>
+
+                                <li>
+                                    <strong  className={"text-purple"}>Aftermath: Triggering the Assemble Components/Endgame Logic:</strong><br />
+                                    This event triggers the aftermath logic with different parameters, every actor can listen to such event:
+                                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
+                                        <li>Generic solution</li>
+                                        <li>Lightweight provided information</li>
+                                        <li>In Project water: Disappearing of remaining wrong objects and animations on assembly</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <strong  className={"text-purple"}>Puzzle Manager Responsibilities:</strong><br />
+                                    The puzzle manager is responsible for:
+                                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
+                                        <li>Assembling the solution component</li>
+                                        <li>Triggering success/failure events</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong className={"text-purple"}>Multiple Puzzle Managers:</strong><br />
+
+                            <ul className="text-3xl sm:text-3xl text-white puzzle-list">
+                                <li><strong className={"text-purple"}>Modular Puzzle Managers:</strong><br />
+                                    There can be different puzzle managers responsible for different types of puzzles, such as:</li>
+                                <ul className="text-3xl sm:text-3xl text-white puzzle-list">
+                                    <li>Assemble puzzles</li>
+                                    <li>Logical sequence puzzles</li>
+                                    <li>And others</li>
+                                </ul>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h2 className="text-6xl sm:text-4xl text-purple">Example: Mars Puzzle</h2>
+
+                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
+                        <li>
+                            <strong className={"text-purple"}>Puzzle Scenario:</strong><br />
+                            In my example, I implemented an assemble puzzle focused on building an arm with a turret for a rover on Mars.
+                        </li>
+
+                        <li>
+                            <strong className={"text-purple"}>Guidance Approaches:</strong><br />
+                            There are three different approaches to guiding the player:
+                            <ul className="text-3xl sm:text-3xl text-white puzzle-list">
+                                <li><strong className={"text-purple"}>Visual:</strong> Text-based guidance.</li>
+                                <li><strong className={"text-purple"}>Auditory:</strong> Narrator explanations in the background.</li>
+                                <li><strong className={"text-purple"}>Haptic:</strong> Stronger haptics on wrong choices.</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong className={"text-purple"}>Dynamic Delegates using Event-driven architecture for Interaction:</strong>
+                            <ul className="text-3xl sm:text-3xl text-white puzzle-list">
+                                <li>
+                                    <strong className={"text-purple"}>Overlap Event Handling:</strong><br />
+                                    Whenever a puzzle component overlaps with an actor, it adds a dynamic delegate to the release event on the held component. If the overlap stops, the delegate is removed (see the attached screenshot).
+                                </li>
+
+                                <li>
+                                    <strong className={"text-purple"}>Tag Passing and Verification:</strong><br />
+                                    The component passes its tag to the puzzle manager, which verifies if such a tag exists in the solution component.
+                                </li>
+
+                                <li>
+                                    <strong className={"text-purple"}>Puzzle Completion Verification:</strong><br />
+                                    The puzzle manager verifies the completed puzzle and can trigger further events based on the completion.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </Section>
+
+                <Section>
+                    <h2 className="text-purple">ProjectWater - Implementation</h2>
                     <ul className="text-3xl sm:text-2xl text-white">
                         <li>
                             View the complete ProjectWater source code on GitHub:
@@ -101,7 +228,7 @@ export default function InfoBoard () {
                         </li>
                     </ul>
 
-                    <h3 className="text-blue-500 mt-4 ">Components</h3>
+                    <h3 className="text-purple mt-4 ">Components</h3>
                     <ul className="text-3xl sm:text-2xl text-white">
                         <li><strong>CPP_GravityItemComponent:</strong> Engineered to add dynamic gravity behavior to items, enabling realistic physics-based interactions. This component simulates gravitational pull, allowing objects to be influenced by nearby forces, creating a more immersive experience.</li>
 
@@ -110,7 +237,7 @@ export default function InfoBoard () {
                         <li><strong>CPP_PuzzleItemComponent:</strong> Handles individual puzzle items by identifying them with unique tags, tracking interactions, and broadcasting events upon puzzle completion. This component ensures the smooth flow of puzzle-solving logic through tagging and event handling.</li>
                     </ul>
 
-                    <h3 className="text-6xl sm:text-3xl text-blue-500 mt-4">Actors</h3>
+                    <h3 className="text-6xl sm:text-3xl text-purple mt-4">Actors</h3>
                     <ul className="text-3xl sm:text-2xl text-white leading-relaxed">
                         <li><strong>CPP_ActorToAssemble:</strong> Built as part of the puzzle assembly system, this actor dynamically scales based on timeline animations. It checks puzzle completion conditions and broadcasts success events when conditions are met, creating engaging puzzle dynamics.</li>
 
@@ -119,12 +246,12 @@ export default function InfoBoard () {
                         <li><strong>CPP_Screenfade:</strong> Designed to create screen transitions with fade-in and fade-out effects. By adjusting opacity and color on a mesh overlay, it provides smooth scene changes that enhance the gameplay flow.</li>
                     </ul>
 
-                    <h3 className="text-6xl sm:text-3xl text-blue-500 mt-4">Game Instance</h3>
+                    <h3 className="text-6xl sm:text-3xl text-purple mt-4">Game Instance</h3>
                     <ul className="text-3xl sm:text-2xl text-white">
                         <li><strong>CPP_GameInstance:</strong> Customized to manage global game states and persistent data across levels. It tracks puzzle completion, game start times, and ensures consistent state management accessible throughout all gameplay elements.</li>
                     </ul>
 
-                    <h3 className="text-6xl sm:text-3xl text-blue-500 mt-4">Player Structure (MVC Pattern)</h3>
+                    <h3 className="text-6xl sm:text-3xl text-purple mt-4">Player Structure (MVC Pattern)</h3>
                     <ul className="text-3xl sm:text-2xl text-white">
                         <li><strong>CPP_PlayerPawnController:</strong> Built as the main controller for player interactions, this class manages input and coordinates with <code>PawnModel</code> and <code>PawnView</code>. Key functions include playing audio feedback, handling item grabbing and dropping, and initiating screen fades, providing intuitive and immersive player control.</li>
 
@@ -133,7 +260,7 @@ export default function InfoBoard () {
                         <li><strong>CPP_PlayerPawnView:</strong> Developed to handle the player’s visual and audio feedback. Manages audio components (music, SFX, grab sounds) and controls screen fades for scene transitions. This class dynamically spawns <code>Screenfade</code> actors and interacts with the controller to deliver responsive player feedback.</li>
                     </ul>
 
-                    <h3 className="text-5xl sm:text-3xl text-blue-500 mt-4">Structure Code</h3>
+                    <h3 className="text-5xl sm:text-3xl text-purple mt-4">Structure Code</h3>
                     <ul className="text-3xl sm:text-2xl text-white">
                         <li><strong>Interactable (Interface):</strong> Defined an interface to support polymorphic interactions, allowing diverse objects to respond to player actions uniformly, enhancing gameplay flexibility.</li>
 
@@ -147,113 +274,47 @@ export default function InfoBoard () {
                     </h1>
                 </SectionCenter>
                 <Section>
-                    <h2 className="text-6xl sm:text-4xl text-white" >Game Puzzle Systems</h2>
-
-                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
-                        <li>
-                            <strong>Generic Puzzle Subsystem:</strong><br />
-                            Developed a generic puzzle subsystem with multiple parameters, aimed at creating a logical path between steps in the puzzle.
-                        </li>
-                    </ul>
-
-                    <h2 className="text-6xl sm:text-4xl text-white">Puzzle Workflow Example</h2>
-
-                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
-                        <li>
-                            <strong>Puzzle Interaction Flow:</strong>
-
-                            <ul className="text-3xl sm:text-3xl text-white puzzle-list">
-                                <li>
-                                    <strong>Object Interaction:</strong><br />
-                                    The player picks up an object and places it in the correct bucket.
-                                </li>
-
-                                <li>
-                                    <strong>Triggering the Puzzle Manager:</strong><br />
-                                    This action triggers the puzzle manager with multiple parameters, such as:
-                                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
-                                        <li>Tags of the object</li>
-                                        <li>Index in the puzzle</li>
-                                        <li>Other tags (e.g., Niagara index, and others)</li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <strong>Puzzle Manager Responsibilities:</strong><br />
-                                    The puzzle manager is responsible for:
-                                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
-                                        <li>Assembling the solution component</li>
-                                        <li>Triggering success/failure events</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <strong>Multiple Puzzle Managers:</strong><br />
-
-                            <ul className="text-3xl sm:text-3xl text-white puzzle-list">
-                                <li><strong>Modular Puzzle Managers:</strong><br />
-                                    There can be different puzzle managers responsible for different types of puzzles, such as:</li>
-                                <ul className="text-3xl sm:text-3xl text-white puzzle-list">
-                                    <li>Assemble puzzles</li>
-                                    <li>Logical sequence puzzles</li>
-                                    <li>And others</li>
-                                </ul>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <h2 className="text-6xl sm:text-4xl text-white">Example: Mars Puzzle</h2>
-
-                    <ul className="text-3xl sm:text-3xl text-white puzzle-list">
-                        <li>
-                            <strong>Puzzle Scenario:</strong><br />
-                            In my example, I implemented an assemble puzzle focused on building an arm with a turret for a rover on Mars.
-                        </li>
-
-                        <li>
-                            <strong>Guidance Approaches:</strong><br />
-                            There are three different approaches to guiding the player:
-                            <ul className="text-3xl sm:text-3xl text-white puzzle-list">
-                                <li><strong>Visual:</strong> Text-based guidance.</li>
-                                <li><strong>Auditory:</strong> Narrator explanations in the background.</li>
-                                <li><strong>Haptic:</strong> Stronger haptics on wrong choices.</li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <strong>Dynamic Delegates using Event-driven architecture for Interaction:</strong>
-                            <ul className="text-3xl sm:text-3xl text-white puzzle-list">
-                                <li>
-                                    <strong>Overlap Event Handling:</strong><br />
-                                    Whenever a puzzle component overlaps with an actor, it adds a dynamic delegate to the release event on the held component. If the overlap stops, the delegate is removed (see the attached screenshot).
-                                </li>
-
-                                <li>
-                                    <strong>Tag Passing and Verification:</strong><br />
-                                    The component passes its tag to the puzzle manager, which verifies if such a tag exists in the solution component.
-                                </li>
-
-                                <li>
-                                    <strong>Puzzle Completion Verification:</strong><br />
-                                    The puzzle manager verifies the completed puzzle and can trigger further events based on the completion.
-                                </li>
-                            </ul>
-                        </li>
+                    <h1 className="text-6xl sm:text-4xl text-purple">Further Projects</h1>
+                    <h3 className="text-6xl sm:text-4xl text-purple">The Crypt Raider</h3>
+                    <ul className="text-3xl sm:text-3xl text-white">
+                        <li className={"text-purple"}>First Person Puzzle RPG Level</li>
+                        <a href="https://github.com/Peter-Ershow/CryptRaider" target="_blank" rel="noopener noreferrer" className="text-blue-500"> GitHub Repository</a>.
+                        <DriveVideoViewer fileId={"1e3ene2bGTmb9DAeSyRwj8ovkHnWp9IdL"}/>
+                        <li>Pure C++ first person RPG level, uses event-driven architecture to connect puzzle parts.</li>
+                        <li>Utilizes classical first person inputs and adds grabbable mechanisms to control objects.</li>
                     </ul>
                 </Section>
                 <Section>
-                    <h3 className="text-6xl sm:text-4xl text-white">The Unknown Project (Working title)</h3>
+                    <h3 className="text-6xl sm:text-4xl text-purple">The Obstacle Assault</h3>
                     <ul className="text-3xl sm:text-3xl text-white">
-                        <li>First Person View Survival Story Game</li>
-                        <li>Developed the interaction system, inventory System, stackable, interactable, pickable, wearable and eatable items interfaces. Worked on doors interaction, animation blueprints and grabbing logic. Project is C++ as much as possible</li>
+                        <li className={"text-purple"}>First Person Puzzle RPG Level</li>
+                        <a href="https://github.com/Peter-Ershow/ObstacleAssault" target="_blank" rel="noopener noreferrer" className="text-blue-500"> GitHub Repository</a>.
+                        <DriveVideoViewer fileId={"1JvxKmCTSkND5NaZA6u39iOu1yaJeUjLk"}/>
+                        <li>In the beginning Blueprints and later migrated to C++ project, includes moving objects mechanics, affecting the collision of a player. In this project I wanted to research collision effects on the player</li>
+                    </ul>
+                </Section>
+                <Section>
+                    <h3 className="text-6xl sm:text-4xl text-purple">The Unknown Project (Working title)</h3>
+                    <ul className="text-3xl sm:text-3xl text-white">
+                        <li className={"text-purple"}>First Person View Survival Story Game</li>
+                        <a href="https://github.com/TheUnknownTeteam/TheUnknownGame" target="_blank" rel="noopener noreferrer" className="text-blue-500"> GitHub Repository</a>.
+
+                        <li>Developed the interaction system, inventory System, stackable, interactable, pickable, wearable and eatable items interfaces, mostly in Blueprints, but with a base in C++. Worked on doors interaction, animation blueprints and grabbing logic.</li>
                         <a href="/UMLClassDiagram.png" target="_blank" rel="noopener noreferrer">
                             <img src="/UMLClassDiagram.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '15%', marginTop: '20px' }} />
                         </a>
                         <a href="/img_3.png" target="_blank" rel="noopener noreferrer">
                             <img src="/img_3.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '15%', marginTop: '20px' }} />
                         </a>
+                    </ul>
+                </Section>
+                <Section>
+                    <h3 className="text-6xl sm:text-4xl text-purple">The Toon Tanks</h3>
+                    <ul className="text-3xl sm:text-3xl text-white">
+                        <li className={"text-purple"}>Third person Tanks Game. First Unreal C++ Project</li>
+                        <a href="https://github.com/Peter-Ershow/ToonTanks" target="_blank" rel="noopener noreferrer" className="text-blue-500"> GitHub Repository</a>.
+                        <DriveVideoViewer fileId={"1sskUOlVVDGBUa8OahrInm1MfyYgyY6Tl"}/>
+                        <li>My first project in C++ Unreal Engine, basic Locomotion movement and Controls, ability to shoot. First experience with game state.</li>
                     </ul>
                 </Section>
                 <Section>

@@ -68,6 +68,7 @@ h4,
 h5,
 h6 {
   opacity: 1;
+  color: peachpuff;
 }
 
 /*
@@ -302,6 +303,7 @@ figure,
 p,
 pre {
   margin: 0;
+  color: peachpuff;
 }
 
 fieldset {
