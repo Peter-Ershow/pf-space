@@ -81,7 +81,7 @@ export default function InfoBoard () {
                         <li>Spaceship level designed by me with Cargo assets. View project documentation <a href="/IEEE_Conference_Template.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500">here</a>.</li>
                         <li><DriveVideoViewer fileId="1a52gmZNsy31ftbZ_zlY4dn8eGuoV5tHH" /> </li>
                         <li></li>
-                        <li>This project included a lot of Blueprint code to maintain ease of understanding for another user of the project. It was completely migrated to C++ by me for a thesis, described below.</li>
+                        <li>This project included a lot of Blueprint code to maintain ease of understanding for another user of the project. It was completely migrated to C++.</li>
                         <li>
                          The game was furthermore developed into my <a href="/Bachelor_Thesis__Ershov%20.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500">thesis at TUM</a>. The implementation and structure is described below.
                             Here you can find a game demo captured on Meta Quest Pro. Compared to the first video, it includes more game mechanics, differentiated based on the hint group.
