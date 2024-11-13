@@ -274,7 +274,22 @@ export default function InfoBoard () {
                     </h1>
                 </SectionCenter>
                 <Section>
-                    <h1 className="text-6xl sm:text-4xl text-purple">Further Projects</h1>
+                    <h3 className="text-6xl sm:text-4xl text-purple">The Unknown Project (Working title)</h3>
+                    <ul className="text-3xl sm:text-3xl text-white">
+                        <li className={"text-purple"}>First Person View Survival Story Game</li>
+                        <a href="https://github.com/TheUnknownTeteam/TheUnknownGame" target="_blank" rel="noopener noreferrer" className="text-blue-500"> GitHub Repository</a>.
+
+                        <li>Developed the interaction system, inventory System, stackable, interactable, pickable, wearable and eatable items interfaces, mostly in Blueprints, but with a base in C++. Worked on doors interaction, animation blueprints and grabbing logic.</li>
+                        <a href="/UMLClassDiagram.png" target="_blank" rel="noopener noreferrer">
+                            <img src="/UMLClassDiagram.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '15%', marginTop: '20px' }} />
+                        </a>
+                        <a href="/img_3.png" target="_blank" rel="noopener noreferrer">
+                            <img src="/img_3.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '15%', marginTop: '20px' }} />
+                        </a>
+                    </ul>
+                </Section>
+                <Section>
+                    <h1 className="text-6xl sm:text-4xl text-purple">Further Enhanced Projects From Certifications and Courses</h1>
                     <h3 className="text-6xl sm:text-4xl text-purple">The Crypt Raider</h3>
                     <ul className="text-3xl sm:text-3xl text-white">
                         <li className={"text-purple"}>First Person Puzzle RPG Level</li>
@@ -290,24 +305,10 @@ export default function InfoBoard () {
                         <li className={"text-purple"}>Third Person View Puzzle RPG Level</li>
                         <a href="https://github.com/Peter-Ershow/ObstacleAssault" target="_blank" rel="noopener noreferrer" className="text-blue-500"> GitHub Repository</a>.
                         <DriveVideoViewer fileId={"1JvxKmCTSkND5NaZA6u39iOu1yaJeUjLk"}/>
-                        <li>In the beginning Blueprints and later migrated to C++ project, includes moving objects mechanics, affecting the collision of a player. In this project I wanted to research collision effects on the player</li>
+                        <li>C++ project, includes moving objects mechanics, affecting the collision of a player. In this project I wanted to research collision effects on the player</li>
                     </ul>
                 </Section>
-                <Section>
-                    <h3 className="text-6xl sm:text-4xl text-purple">The Unknown Project (Working title)</h3>
-                    <ul className="text-3xl sm:text-3xl text-white">
-                        <li className={"text-purple"}>First Person View Survival Story Game</li>
-                        <a href="https://github.com/TheUnknownTeteam/TheUnknownGame" target="_blank" rel="noopener noreferrer" className="text-blue-500"> GitHub Repository</a>.
 
-                        <li>Developed the interaction system, inventory System, stackable, interactable, pickable, wearable and eatable items interfaces, mostly in Blueprints, but with a base in C++. Worked on doors interaction, animation blueprints and grabbing logic.</li>
-                        <a href="/UMLClassDiagram.png" target="_blank" rel="noopener noreferrer">
-                            <img src="/UMLClassDiagram.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '15%', marginTop: '20px' }} />
-                        </a>
-                        <a href="/img_3.png" target="_blank" rel="noopener noreferrer">
-                            <img src="/img_3.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '15%', marginTop: '20px' }} />
-                        </a>
-                    </ul>
-                </Section>
                 <Section>
                     <h3 className="text-6xl sm:text-4xl text-purple">The Toon Tanks</h3>
                     <ul className="text-3xl sm:text-3xl text-white">
