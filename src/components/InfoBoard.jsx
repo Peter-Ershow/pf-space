@@ -304,6 +304,7 @@ export default function InfoBoard () {
                         <a href="https://github.com/Peter-Ershow/ObstacleAssault" target="_blank" rel="noopener noreferrer" className="text-blue-500"> GitHub Repository</a>.
                         <DriveVideoViewer fileId={"1JvxKmCTSkND5NaZA6u39iOu1yaJeUjLk"}/>
                         <li>C++ project, includes moving objects mechanics, affecting the collision of a player. In this project I wanted to research collision effects on the player</li>
+                        <li>Compared to many other certification projects, this one was extended by me in many places, I added a easter egg with football and increased complexity of the platforms</li>
                     </ul>
                 </Section>
 
