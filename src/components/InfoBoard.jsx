@@ -48,9 +48,9 @@ export default function InfoBoard () {
                 </SectionCenter>
                 <Section>
                     <ul className="text-4xl sm:text-4xl text-white">
-                        <h2 className="text-6xl sm:text-4xl text-purple">Programmer Portfolio</h2>
+                        <h2 className="text-6xl sm:text-4xl text-purple">My Programmer Portfolio</h2>
                         <li>This place here is dedicated to the art of game design, scripting, and engineering of immersive experiences for players.</li>
-                        <li>I am looking for a professional engagement in top-tier game development or software engineering. Looking for C++ or Blueprint Developer positions in gameplay programming, scripting or other programming positions.</li>
+                        <li>I am looking for a professional engagement in top-tier game development. Looking for C++ or Blueprint Developer positions in gameplay programming, scripting or other programming positions.</li>
                         <li>I want to share my passion in creating emotions and feelings for people around me, no matter which world it is, virtual with good old PC games, or real, with some long DND nights.</li>
                     </ul>
                 </Section>
@@ -316,6 +316,15 @@ export default function InfoBoard () {
                         <li>My first project in C++ Unreal Engine, basic Locomotion movement and Controls, ability to shoot. First experience with game state.</li>
                     </ul>
                 </Section>
+                <Section>
+                    <h3 className="text-6xl sm:text-4xl text-purple">UE Gameplay Ability System in RPG Games</h3>
+                    <ul className="text-3xl sm:text-3xl text-white">
+                        <a href="https://github.com/Peter-Ershow/RPGGame" target="_blank" rel="noopener noreferrer" className="text-blue-500"> GitHub Repository</a>.
+                        <li>Currently in progress for advanced certification that includes broad overview and practice with Unreal Engine Gameplay Ability System</li>
+                        <a href="https://www.udemy.com/course/unreal-engine-5-gas-top-down-rpg/" target="_blank" rel="noopener noreferrer" className="text-blue-500"> The Course</a>.
+                    </ul>
+                </Section>
+
                 <Section>
                     <h3 className="text-6xl sm:text-4xl text-purple">CI/CD</h3>
                     <ul className="text-3xl sm:text-2xl text-white" style={{ opacity: 1 }}>
