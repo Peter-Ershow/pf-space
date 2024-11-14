@@ -48,16 +48,16 @@ export default function InfoBoard () {
                 </SectionCenter>
                 <Section>
                     <ul className="text-4xl sm:text-4xl text-white">
-                        <h2 className="text-6xl sm:text-4xl text-purple">My Programmer Portfolio</h2>
+                        <h2 className="text-6xl sm:text-4xl text-purple">Programmer Portfolio</h2>
                         <li>This place here is dedicated to the art of game design, scripting, and engineering of immersive experiences for players.</li>
-                        <li>I am looking for a professional engagement in top-tier game development. Looking for C++ or Blueprint Developer positions in gameplay programming, scripting or other programming positions.</li>
+                        <li>I am looking for a professional engagement in top-tier game development or software engineering. Looking for C++ or Blueprint Developer positions in gameplay programming, scripting or other programming positions.</li>
                         <li>I want to share my passion in creating emotions and feelings for people around me, no matter which world it is, virtual with good old PC games, or real, with some long DND nights.</li>
                     </ul>
                 </Section>
                 <Section>
                     <h2 className="text-6xl sm:text-4xl text-purple">Why are we here?</h2>
                     <ul className="text-3xl sm:text-2xl text-white">
-                        <li>Since age 16, my hobby has been creating levels of all kinds, learn the coding languages by game programming(yes, I even did JavaFX) and run my board games as if I was implementing it</li>
+                        <li>Since age 16, my hobby has been creating levels of all kinds, learn the coding languages by game programming (yes, I even did Java FX) and run my board games as if I was implementing it</li>
                     </ul>
                     <h2 className="text-6xl sm:text-4xl text-purple  mt-4">Game Dev</h2>
                     <ul className="text-3xl sm:text-2xl text-white">
@@ -65,7 +65,7 @@ export default function InfoBoard () {
                         <li>Have done two major projects in VR, with focus on C++ code. Currently doing a top-down RPG situated around my DND campaigns best puzzles and moments</li>
                         <h4 className="text-6xl sm:text-4xl text-purple"> Owned Projects </h4>
                         <li>Completed multiple courses and projects in C++ and Blueprints for Unreal Engine. I focused on level scripting(interaction logic), animations, and sound engineering.</li>
-                        <li>All projects can be found on my {' '}<a href="https://github.com/Peter-Ershow" target="_blank" rel="noopener noreferrer" className="text-blue-500">GitHub Page</a>.</li>
+                        <li>All projects can be found on my {' '}<a href="https://github.com/Peter-Ershow" target="_blank" rel="noopener noreferrer" className="text-blue-500">GitHub Page</a></li>
                         <h4 className="text-6xl sm:text-4xl text-purple"> Research </h4>
                         <li>Conducted a game project in 2024 that included different hints mechanics, based on the given human sense(Visual, Auditory, Haptic). Ran a research and a survey on 40 people</li>
                     </ul>
@@ -83,18 +83,16 @@ export default function InfoBoard () {
                         <li></li>
                         <li>This project included a lot of Blueprint code to maintain ease of understanding for another user of the project. It was completely migrated to C++.</li>
                         <li>
-                         The game was furthermore developed into my <a href="/Bachelor_Thesis__Ershov%20.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500">thesis at TUM</a>. The implementation and structure is described below.
-                            Here you can find a game demo captured on Meta Quest Pro. Compared to the first video, it includes more game mechanics, differentiated based on the hint group.
-                            It furthermore includes puzzle and gravity related effects.
+                         The game was furthermore developed into my <a href="/Bachelor_Thesis__Ershov%20.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-500">thesis at TUM</a>..
+                            Here you can find a game demo captured on Meta Quest Pro. Compared to the first video, it includes more game mechanics, differentiated based on the hint group. It furthermore includes assemble puzzle and gravity related effects.
+                            The implementation and structure of it is described below.
                             <DriveVideoViewer fileId={"1zzZdDhrOOYaSoKhH55WhckeHPjQeBUrg"}/>
                         </li>
                     </ul>
-                    <a href="/img_1.png" target="_blank" rel="noopener noreferrer">
-                        <img src="/img_1.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '30%', marginTop: '20px' }} />
+                    <a>
+                        <img src="/img_1.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '100%', marginTop: '20px' }} />
                     </a>
-                    <a href="/img_2.png" target="_blank" rel="noopener noreferrer">
-                        <img src="/img_2.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '20%', marginTop: '20px' }} />
-                    </a>
+
                 </Section>
                 <SectionCenter>
                     <h1>
@@ -280,11 +278,11 @@ export default function InfoBoard () {
                         <a href="https://github.com/TheUnknownTeteam/TheUnknownGame" target="_blank" rel="noopener noreferrer" className="text-blue-500"> GitHub Repository</a>.
 
                         <li>Developed the interaction system, inventory System, stackable, interactable, pickable, wearable and eatable items interfaces, mostly in Blueprints, but with a base in C++. Worked on doors interaction, animation blueprints and grabbing logic.</li>
-                        <a href="/UMLClassDiagram.png" target="_blank" rel="noopener noreferrer">
-                            <img src="/UMLClassDiagram.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '15%', marginTop: '20px' }} />
+                        <a>
+                            <img src="/UMLClassDiagram.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '90%', marginTop: '20px' }} />
                         </a>
-                        <a href="/img_3.png" target="_blank" rel="noopener noreferrer">
-                            <img src="/img_3.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '15%', marginTop: '20px' }} />
+                        <a>
+                            <img src="/img_3.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '90%', marginTop: '20px' }} />
                         </a>
                     </ul>
                 </Section>
@@ -325,8 +323,8 @@ export default function InfoBoard () {
                         <li>Depending on the size of the container Cooking and Packaging of projects can also be enabled for an Unreal Project. If it's a single person project or a 3JS website like this, I use GitHub Actions.</li>
                         <li>Here you can find an example history graph of one of my latest projects</li>
                     </ul>
-                    <a href="/img.png" target="_blank" rel="noopener noreferrer">
-                        <img src="/img.png" alt="Project Water Screenshot" style={{ borderRadius: '15px', width: '30%', marginTop: '20px' }} />
+                    <a>
+                        <img src="/img.png" alt="CI/CD" style={{ borderRadius: '15px', width: '100%', marginTop: '20px' }} />
                     </a>
                 </Section>
                 <Section>
