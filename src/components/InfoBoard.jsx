@@ -50,7 +50,6 @@ export default function InfoBoard () {
                     <ul className="text-4xl sm:text-4xl text-white">
                         <h2 className="text-6xl sm:text-4xl text-purple">My Programmer Portfolio</h2>
                         <li>This place here is dedicated to the art of game design, scripting, and engineering of immersive experiences for players.</li>
-                        <li>I am looking for a professional engagement in top-tier game development. Looking for C++ or Blueprint Developer positions in gameplay programming, scripting or other programming positions.</li>
                         <li>I want to share my passion in creating emotions and feelings for people around me, no matter which world it is, virtual with good old PC games, or real, with some long DND nights.</li>
                     </ul>
                 </Section>
