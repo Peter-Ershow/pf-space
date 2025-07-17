@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduation Ceremony Dinner Invitation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .invitation-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.1) 20px
+            );
+            animation: shimmer 3s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+        
+        .graduation-cap {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .celebration-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: #636e72;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .honoree-section {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            margin: 0 -30px 30px -30px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .honoree-section::before {
+            content: '✨';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 1.5rem;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+        
+        .honoree-section::after {
+            content: '✨';
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 1.5rem;
+            animation: twinkle 2s ease-in-out infinite 1s;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .honoree-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .achievement {
+            font-size: 1.1rem;
+            color: #636e72;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .celebration-text {
+            font-size: 1.1rem;
+            color: #2d3436;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .event-details {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 5px solid #6c5ce7;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .detail-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .detail-icon {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .detail-text {
+            color: #2d3436;
+        }
+        
+        .rsvp-section {
+            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+            margin: 30px -30px 0 -30px;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        
+        .rsvp-text {
+            font-size: 1.1rem;
+            color: #2d3436;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .decorative-border {
+            height: 3px;
+            background: linear-gradient(90deg, #6c5ce7, #a29bfe, #fd79a8, #fdcb6e);
+            margin: 20px 0;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #636e72;
+            font-size: 1rem;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(108, 92, 231, 0.1);
+            border-radius: 10px;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .float-element {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .float-element:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .float-element:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+        .float-element:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
+        .float-element:nth-child(4) { bottom: 10%; right: 10%; animation-delay: 1s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        @media (max-width: 600px) {
+            .celebration-title { font-size: 2rem; }
+            .honoree-name { font-size: 1.8rem; }
+            .content { padding: 30px 20px; }
+            .header { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-container">
+        <div class="floating-elements">
+            <div class="float-element">🎓</div>
+            <div class="float-element">🌟</div>
+            <div class="float-element">🎉</div>
+            <div class="float-element">🥳</div>
+        </div>
+        
+        <div class="header">
+            <div class="graduation-cap">🎓</div>
+            <div class="celebration-title">Graduation Celebration</div>
+            <div class="subtitle">Join us for a special dinner</div>
+        </div>
+        
+        <div class="content">
+            <div class="honoree-section">
+                <div class="honoree-name">Mariia Movchan</div>
+                <div class="achievement">has achieved this incredible milestone!</div>
+            </div>
+            
+            <div class="celebration-text">
+                You are cordially invited to celebrate this remarkable achievement with us. 
+                Let's gather to honor Mariia's dedication, hard work, and success as she embarks on her next chapter.
+            </div>
+            
+            <div class="decorative-border"></div>
+            
+            <div class="event-details">
+                <div class="detail-item">
+                    <div class="detail-icon">📅</div>
+                    <div class="detail-text">
+                        <strong>Date:</strong> Friday, July 18th, 2025
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">⏰</div>
+                    <div class="detail-text">
+                        <strong>Time:</strong> 20:00 (8:00 PM)
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">📍</div>
+                    <div class="detail-text">
+                        <strong>Location:</strong> Peter and Mariia's House
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-icon">🍽️</div>
+                    <div class="detail-text">
+                        <strong>Occasion:</strong> Graduation Ceremony Dinner
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote">
+                "The future belongs to those who believe in the beauty of their dreams." 
+                <br>— Eleanor Roosevelt
+            </div>
+            
+            <div class="rsvp-section">
+                <div class="rsvp-text">
+                    Please RSVP to Peter: 015756551428
+                </div>
+                <div style="font-size: 0.9rem; color: #636e72; margin-top: 10px;">
+                    <strong>RSVP by today</strong> • We can't wait to celebrate with you! 🎉
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
