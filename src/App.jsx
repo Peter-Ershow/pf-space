@@ -93,8 +93,8 @@ export default function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/mariia-invitation" element={<MariiaDinnerInvitation />} />
-                <Route path="/" element={<SpaceScene />} />
+                <Route path="/" element={<MariiaDinnerInvitation />} />
+                <Route path="/mariia-invitation" element={<SpaceScene />} />
             </Routes>
         </Router>
     );
